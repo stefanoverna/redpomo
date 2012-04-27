@@ -21,9 +21,9 @@ module Redpomo
       end
     end
 
-    def tracker_by_contexts(contexts)
+    def tracker_for_task(task)
       trackers.find do |tracker|
-        contexts.include? tracker.context
+        task.contexts.include? tracker.context
       end
     end
 

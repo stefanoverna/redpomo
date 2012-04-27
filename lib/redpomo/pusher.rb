@@ -11,7 +11,7 @@ module Redpomo
 
     def execute
       (@options[:fuzzy] ? fuzzy_entries : entries).each do |entry|
-        tracker = config.tracker_by_contexts(entry.to_task.contexts)
+        tracker = config.tracker_for_task(entry.to_task)
         tracker.push_entry(entry)
       end
     end

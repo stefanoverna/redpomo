@@ -4,6 +4,8 @@ require "todo-txt"
 require "yaml"
 require "json"
 require "csv"
+require "launchy"
+require "applescript"
 
 require "redpomo/version"
 require "redpomo/ext"

@@ -19,6 +19,8 @@ Gem::Specification.new do |gem|
   gem.add_dependency "thor"
   gem.add_dependency "todo-txt"
   gem.add_dependency "rest-client"
+  gem.add_dependency "launchy"
+  gem.add_dependency "applescript"
 
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "mocha"

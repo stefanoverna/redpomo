@@ -83,5 +83,19 @@ module Redpomo
 
     end
 
+    def url_for(object)
+      if object.is_a? Todo::Task
+        if object.issues.any?
+          issue = object.issues.first.gsub(/^#/,'')
+          "#{@base_url}/issues/#{issue}"
+        elsif object.projects.any?
+          project = task.projects.first.gsub(/^\+/,'')
+          "#{@base_url}/projects/#{issue}"
+        else
+          "#{@base_url}/projects/#{@default_project}"
+        end
+      end
+    end
+
   end
 end
