@@ -1,15 +1,18 @@
 require 'redpomo/issue'
+require 'redpomo/cache'
 
 module Redpomo
 
   class Tracker
     attr_reader :name
 
-    def initialize(name, url, api_key, default_project)
-      @name = name
-      @base_url = url
-      @api_key = api_key
-      @default_project = default_project
+    def initialize(options)
+      options.symbolize_keys!
+      @name = options[:name]
+      @base_url = options[:url]
+      @api_key = options[:token]
+      @default_project = options[:default_project]
+      @closed_status_id = options[:closed_status]
     end
 
     def context
@@ -17,42 +20,13 @@ module Redpomo
     end
 
     def current_user_id
-      data = RestClient.get(
-        "#{@base_url}/users/current.json",
-        params: { key: @api_key },
-        accept: :json,
-        content_type: :json
-      )
-      JSON.parse(data)["user"]["id"]
+      get("/users/current")["user"]["id"]
     end
 
     def issues
-      data = RestClient.get(
-        "#{@base_url}/issues.json",
-        params: {
-          key: @api_key,
-          assigned_to_id: current_user_id,
-          status_id: "open"
-        },
-        accept: :json,
-        content_type: :json
-      )
-
-      projects = JSON.parse(data)["issues"].map do |issue|
-        issue["project"]["id"]
-      end.uniq.inject ({}) do |result, id|
-        d = RestClient.get(
-          "#{@base_url}/projects/#{id}.json",
-          params: { key: @api_key },
-          accept: :json,
-          content_type: :json
-        )
-        result[id] = JSON.parse(d)["project"]["identifier"]
-        result
-      end
-
-      JSON.parse(data)["issues"].map do |issue|
-        issue["project"] = projects[issue["project"]["id"]]
+      data = get("/issues", assigned_to_id: current_user_id, status_id: "open")
+      data["issues"].map do |issue|
+        issue["project"] = project_identifier_for(issue["project"]["id"])
         Issue.new(@name, issue)
       end
     end
@@ -73,14 +47,11 @@ module Redpomo
       time_entry[:hours] = entry.duration / 3600.0
       time_entry[:comments] = task.text
 
-      RestClient.post(
-        "#{@base_url}/time_entries.json",
-        { time_entry: time_entry }.to_json,
-        params: { key: @api_key },
-        accept: :json,
-        content_type: :json
-      )
+      post("/time_entries", time_entry: time_entry)
+    end
 
+    def close_issue(id, message = nil)
+      put("/issues/#{id}", issue: { status_id: "5", notes: message })
     end
 
     def url_for(object)
@@ -95,6 +66,31 @@ module Redpomo
           "#{@base_url}/projects/#{@default_project}"
         end
       end
+    end
+
+    private
+
+    def project_identifier_for(project_id)
+      Cache.get("#{@name}:#{project_id}:identifier") do
+        data = get("/projects/#{project_id}")
+        data["project"]["identifier"]
+      end
+    end
+
+    def get(url, params = {})
+      params = params.merge(key: @api_key)
+      result = RestClient.get(@base_url + url + ".json", params: params, accept: :json, content_type: :json)
+      JSON.parse(result)
+    end
+
+    def put(url, data)
+      result = RestClient.put(@base_url + url + ".json", data.to_json, params: { key: @api_key }, accept: :json, content_type: :json)
+      JSON.parse(result)
+    end
+
+    def post(url, data)
+      result = RestClient.post(@base_url + url + ".json", data.to_json, params: { key: @api_key }, accept: :json, content_type: :json)
+      JSON.parse(result)
     end
 
   end

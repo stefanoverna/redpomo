@@ -17,7 +17,7 @@ module Redpomo
 
     def trackers
       @trackers ||= @data["trackers"].map do |key, data|
-        Tracker.new(key, data["url"], data["token"], data["default_project"])
+        Tracker.new(data.merge(name: key))
       end
     end
 

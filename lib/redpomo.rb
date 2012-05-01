@@ -1,4 +1,4 @@
-require "active_support/all"
+require "active_support/core_ext"
 require "rest-client"
 require "todo-txt"
 require "yaml"
