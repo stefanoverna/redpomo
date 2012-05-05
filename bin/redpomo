@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'redpomo'
+require 'redpomo/cli'
+
 Redpomo::CLI.start
 
