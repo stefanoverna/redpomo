@@ -1,6 +1,24 @@
-# Redpomo
+# Redpomo: Redmine, Pomodoro.app and Todo-txt. Toghether.
 
-TODO: Write a gem description
+[![Build Status](https://secure.travis-ci.org/stefanoverna/redpomo.png)](http://travis-ci.org/stefanoverna/redpomo)
+
+Redpomo is the classic "scratch your own itch" project:
+
+* It makes it really easy to manage Redmine issues from the command-line;
+* It is able to sync Redmine issues with your local Todo.txt tasks;
+* It can start Pomodoro.app timer on a specific Todo.txt task, and is
+  able to "push" the logged pomodoros as Redmine timetracks.
+
+## Usage
+
+    › redpomo help
+    Tasks:
+      redpomo close TASK    # Marks a todo.txt task as complete, and closes the related Redmine issue
+      redpomo help [TASK]   # Describe available tasks or one specific task
+      redpomo open TASK     # Opens up the Redmine issue page of the selected task
+      redpomo pull          # Imports Redmine open issues into local todo.txt
+      redpomo push LOGFILE  # Parses Pomodoro export file and imports to Redmine clients
+      redpomo start TASK    # Starts a Pomodoro session for the selected task
 
 ## Installation
 
@@ -15,10 +33,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install redpomo
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
