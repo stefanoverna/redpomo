@@ -22,7 +22,7 @@ module Redpomo
 
     private
 
-    def inizialize
+    def initialize
       @cache_path = File.expand_path("~/.redpomo-cache~")
     end
 
