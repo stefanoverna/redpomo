@@ -6,3 +6,4 @@ gemspec
 gem 'rspec'
 gem 'vcr'
 gem 'mocha'
+gem 'rake'
