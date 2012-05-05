@@ -1,0 +1,1222 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/users/current.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:51 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6df553109c9cbad2780d79137ea91f28"'
+      X-Runtime:
+      - '73'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '195'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"user":{"last_login_on":"2012/05/04 18:46:33 +0200","lastname":"Verna","mail":"stefano.verna@gmail.com","login":"steffoz","created_on":"2012/02/14
+        16:47:55 +0100","firstname":"Stefano","id":18}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:51 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/issues.json?assigned_to_id=18&key=CANTIERE_TOKEN&status_id=open
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:52 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"1a8b51089c42fdc3e314a8508fe1bd39"'
+      X-Runtime:
+      - '82'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Set-Cookie:
+      - _redmine_session=BAh7CDoKcXVlcnl7CToPcHJvamVjdF9pZDA6DGZpbHRlcnN7ByITYXNzaWduZWRfdG9faWR7BzoNb3BlcmF0b3IiBj06C3ZhbHVlc1sGIgcxOCIOc3RhdHVzX2lkewc7CCIGbzsJWwYiCHBlbjoNZ3JvdXBfYnkwOhFjb2x1bW5fbmFtZXMwOg9zZXNzaW9uX2lkIiVjNjA3NDhhOWViYWYwYjk3MjMzNWM1NzU5OGMzMTc0YyIWaXNzdWVzX2luZGV4X3NvcnQiDGlkOmRlc2M%3D--505575743b38b203ac9c894d0782e0f813c59863;
+        path=/; HttpOnly
+      Content-Length:
+      - '11978'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"offset":0,"issues":[{"priority":{"name":"Normal","id":4},"updated_on":"2012/05/03
+        16:32:34 +0200","subject":"mailchimp","assigned_to":{"name":"Stefano Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Feature","id":2},"start_date":"2012/05/03","description":"ecco
+        il codice per il form mailchimp:\r\n******************************************\r\n\u003C!--
+        Begin MailChimp Signup Form --\u003E\r\n\u003Clink href=\"http://cdn-images.mailchimp.com/embedcode/classic-081711.css\"
+        rel=\"stylesheet\" type=\"text/css\"\u003E\r\n\u003Cstyle type=\"text/css\"\u003E\r\n\t#mc_embed_signup{background:#fff;
+        clear:left; font:14px Helvetica,Arial,sans-serif; }\r\n\t/* Add your own MailChimp
+        form style overrides in your site stylesheet or in this style block.\r\n\t   We
+        recommend moving this block and the preceding CSS link to the HEAD of your
+        HTML file. */\r\n\u003C/style\u003E\r\n\u003Cdiv id=\"mc_embed_signup\"\u003E\r\n\u003Cform
+        action=\"http://CantiereCreativo.us2.list-manage.com/subscribe/post?u=c77c7f8b8f73acd46067732ec\u0026amp;id=36a9f9f1ce\"
+        method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\"
+        class=\"validate\" target=\"_blank\"\u003E\r\n\t\u003Ch2\u003ESubscribe to
+        our mailing list\u003C/h2\u003E\r\n\u003Cdiv class=\"indicates-required\"\u003E\u003Cspan
+        class=\"asterisk\"\u003E*\u003C/span\u003E indicates required\u003C/div\u003E\r\n\u003Cdiv
+        class=\"mc-field-group\"\u003E\r\n\t\u003Clabel for=\"mce-EMAIL\"\u003EIndirizzo
+        Email  \u003Cspan class=\"asterisk\"\u003E*\u003C/span\u003E\r\n\u003C/label\u003E\r\n\t\u003Cinput
+        type=\"email\" value=\"\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\"\u003E\r\n\u003C/div\u003E\r\n\u003Cdiv
+        class=\"mc-field-group\"\u003E\r\n\t\u003Clabel for=\"mce-FNAME\"\u003ENome  \u003Cspan
+        class=\"asterisk\"\u003E*\u003C/span\u003E\r\n\u003C/label\u003E\r\n\t\u003Cinput
+        type=\"text\" value=\"\" name=\"FNAME\" class=\"required\" id=\"mce-FNAME\"\u003E\r\n\u003C/div\u003E\r\n\t\u003Cdiv
+        id=\"mce-responses\" class=\"clear\"\u003E\r\n\t\t\u003Cdiv class=\"response\"
+        id=\"mce-error-response\" style=\"display:none\"\u003E\u003C/div\u003E\r\n\t\t\u003Cdiv
+        class=\"response\" id=\"mce-success-response\" style=\"display:none\"\u003E\u003C/div\u003E\r\n\t\u003C/div\u003E\t\u003Cdiv
+        class=\"clear\"\u003E\u003Cinput type=\"submit\" value=\"Subscribe\" name=\"subscribe\"
+        id=\"mc-embedded-subscribe\" class=\"button\"\u003E\u003C/div\u003E\r\n\u003C/form\u003E\r\n\u003C/div\u003E\r\n\r\n\u003C!--End
+        mc_embed_signup--\u003E\r\n**********************************************************************************************************\r\nquesta
+        la versione light:\r\n**********************************************************************************************************\r\n\u003C!--
+        Begin MailChimp Signup Form --\u003E\r\n\u003Cdiv id=\"mc_embed_signup\"\u003E\r\n\u003Cform
+        action=\"http://CantiereCreativo.us2.list-manage.com/subscribe/post?u=c77c7f8b8f73acd46067732ec\u0026amp;id=36a9f9f1ce\"
+        method=\"post\" id=\"mc-embedded-subscribe-form\" name=\"mc-embedded-subscribe-form\"
+        class=\"validate\" target=\"_blank\"\u003E\r\n\t\u003Ch2\u003ESubscribe to
+        our mailing list\u003C/h2\u003E\r\n\u003Cdiv class=\"indicates-required\"\u003E\u003Cspan
+        class=\"asterisk\"\u003E*\u003C/span\u003E indicates required\u003C/div\u003E\r\n\u003Cdiv
+        class=\"mc-field-group\"\u003E\r\n\t\u003Clabel for=\"mce-EMAIL\"\u003EIndirizzo
+        Email  \u003Cspan class=\"asterisk\"\u003E*\u003C/span\u003E\r\n\u003C/label\u003E\r\n\t\u003Cinput
+        type=\"email\" value=\"\" name=\"EMAIL\" class=\"required email\" id=\"mce-EMAIL\"\u003E\r\n\u003C/div\u003E\r\n\u003Cdiv
+        class=\"mc-field-group\"\u003E\r\n\t\u003Clabel for=\"mce-FNAME\"\u003ENome  \u003Cspan
+        class=\"asterisk\"\u003E*\u003C/span\u003E\r\n\u003C/label\u003E\r\n\t\u003Cinput
+        type=\"text\" value=\"\" name=\"FNAME\" class=\"required\" id=\"mce-FNAME\"\u003E\r\n\u003C/div\u003E\r\n\t\u003Cdiv
+        id=\"mce-responses\" class=\"clear\"\u003E\r\n\t\t\u003Cdiv class=\"response\"
+        id=\"mce-error-response\" style=\"display:none\"\u003E\u003C/div\u003E\r\n\t\t\u003Cdiv
+        class=\"response\" id=\"mce-success-response\" style=\"display:none\"\u003E\u003C/div\u003E\r\n\t\u003C/div\u003E\t\u003Cdiv
+        class=\"clear\"\u003E\u003Cinput type=\"submit\" value=\"Subscribe\" name=\"subscribe\"
+        id=\"mc-embedded-subscribe\" class=\"button\"\u003E\u003C/div\u003E\r\n\u003C/form\u003E\r\n\u003C/div\u003E\r\n\r\n\u003C!--End
+        mc_embed_signup--\u003E","created_on":"2012/05/03 16:32:34 +0200","done_ratio":0,"project":{"name":"Florence
+        on ruby","id":74},"author":{"name":"Francesco Giovannetti","id":4},"id":1006},{"priority":{"name":"Normal","id":4},"updated_on":"2012/04/27
+        13:39:20 +0200","subject":"gestione utenti","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Bug","id":1},"start_date":"2012/04/27","description":"Cancellazione
+        utenti non viene richiesta conferma e si \u00e8 subito buttati fuori dall''applicazione","created_on":"2012/04/27
+        13:39:20 +0200","done_ratio":0,"project":{"name":"Sito Giunti Educational
+        ","id":56},"author":{"name":"Luca Bonfiglio","id":5},"id":987},{"priority":{"name":"Normal","id":4},"updated_on":"2012/05/03
+        11:52:51 +0200","subject":"Documentazione server su Wiki","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Support","id":3},"start_date":"2012/04/27","description":"Aggiornare
+        la wiki con i parametri del server Giunti","created_on":"2012/04/27 13:37:27
+        +0200","done_ratio":0,"project":{"name":"Sito Giunti Educational ","id":56},"author":{"name":"Luca
+        Bonfiglio","id":5},"id":986},{"priority":{"name":"Normal","id":4},"updated_on":"2012/05/03
+        11:52:30 +0200","subject":"Form richiesta kit","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","description":"I
+        file PSD li trovi su dropbox, in allegato al ticket le preview","created_on":"2012/04/27
+        13:36:38 +0200","done_ratio":0,"project":{"name":"Sito Giunti Educational
+        ","id":56},"author":{"name":"Luca Bonfiglio","id":5},"id":985},{"priority":{"name":"Normal","id":4},"updated_on":"2012/04/26
+        17:03:02 +0200","subject":"Invia libro ad un amico","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Feature","id":2},"start_date":"2012/04/26","description":"","created_on":"2012/04/26
+        17:03:02 +0200","done_ratio":0,"project":{"name":"Sito Giunti Educational
+        ","id":56},"author":{"name":"Stefano Verna","id":18},"id":976},{"priority":{"name":"Normal","id":4},"updated_on":"2012/04/03
+        19:14:09 +0200","subject":"Immagini promo per chrome","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Feature","id":2},"start_date":"2012/04/03","description":"ti
+        allego qui le due schermate da dare in pasto a chrome","due_date":"2012/04/04","created_on":"2012/04/03
+        19:14:09 +0200","done_ratio":0,"project":{"name":"zazit","id":52},"author":{"name":"Matteo
+        Papadopoulos","id":10},"id":859},{"priority":{"name":"High","id":5},"updated_on":"2012/04/03
+        19:18:14 +0200","subject":"Correzioni frase e logo zazit","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Feature","id":2},"start_date":"2012/04/03","description":"La
+        frase corretta da inserire \u00e8:\r\n\r\n_Aggiungi con un clic alla tua libreria
+        su zazie.it i libri che trovi in rete._\r\n\r\ninoltre dove c''\u00e8 il logo
+        scritto va tolto il punto escalmativo, non pi\u00f9 *-zazit!-* ma *Zazit :)*
+        sempre con la Z maiuscola\r\n\r\nQuando non si trovano libri\r\n_Spiacenti!
+        Zazit non ha trovato alcun libro su questa pagina_\r\n\r\nh2. descrizione
+        lunga per chrome ecc\r\n\r\n_Con Zazit puoi aggiungere con un clic i libri
+        che trovi mentre navighi\r\nalla tua libreria su Zazie.it.\r\nQuando vedi
+        un libro su una pagina web e vuoi aggiungerlo rapidamente\r\ne con semplicit\u00e0
+        al tuo scaffale su Zazie.it, ti basta cliccare sul\r\nbottone Zazit per evidenziare
+        il codice Ean (il numero dietro ogni\r\nlibro, sopra il codice a barre) associato
+        a quel libro e aggiungerlo\r\nalla tua libreria.\r\nAttenzione: se il sito
+        in cui stai navigando non associa i codici Ean\r\nal libro, per zazit non
+        sar\u00e0 possibile rilevare le informazioni sul\r\nlibro e quindi aggiungerlo
+        alla libreria._","due_date":"2012/04/04","created_on":"2012/04/03 19:06:09
+        +0200","done_ratio":0,"project":{"name":"zazit","id":52},"author":{"name":"Matteo
+        Papadopoulos","id":10},"id":858},{"parent":{"id":823},"priority":{"name":"Urgent","id":6},"updated_on":"2012/04/03
+        10:28:35 +0200","subject":"icone per safari","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"In Progress","id":2},"tracker":{"name":"Feature","id":2},"start_date":"2012/04/01","description":"in
+        allegato le icone per safari a 64, 48, 32 e 16 pixel\r\n\r\npresumo che per
+        firefox possa andare bene quella che ti ho passato per chrome, giusto?","due_date":"2012/04/02","created_on":"2012/04/01
+        20:37:41 +0200","done_ratio":0,"project":{"name":"zazit","id":52},"author":{"name":"Matteo
+        Papadopoulos","id":10},"id":839},{"priority":{"name":"Urgent","id":6},"updated_on":"2012/04/02
+        13:52:28 +0200","subject":"icona per chrome market","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"In Progress","id":2},"tracker":{"name":"Feature","id":2},"start_date":"2012/04/01","description":"ecco
+        qua in allegatp l''icona a 128x128 come indicato dalle linee guida di google.\r\n","due_date":"2012/04/02","created_on":"2012/04/01
+        20:16:20 +0200","done_ratio":0,"project":{"name":"zazit","id":52},"author":{"name":"Matteo
+        Papadopoulos","id":10},"id":837},{"priority":{"name":"Normal","id":4},"updated_on":"2012/03/29
+        11:54:09 +0200","subject":"Rel Canonical e rel author","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Ideas","id":7},"start_date":"2012/03/29","description":"Il
+        Palla \"vuole\" in tutti i modi che railsyard posso gestire il rel canonical
+        e rel author...\r\nmi sembrano abbastanza \"complessi\" nella loro logica,
+        va pensato come integrarli per la gestione delle pagine","fixed_version":{"name":"v3","id":3},"created_on":"2012/03/29
+        11:39:49 +0200","done_ratio":0,"project":{"name":"Railsyard","id":15},"author":{"name":"Matteo
+        Papadopoulos","id":10},"id":820},{"priority":{"name":"Normal","id":4},"updated_on":"2012/03/15
+        23:32:37 +0100","subject":"DSL backend per la gestione dei model","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Feature","id":2},"start_date":"2012/03/15","description":"*
+        rails_admin","fixed_version":{"name":"v3","id":3},"created_on":"2012/03/15
+        23:32:37 +0100","done_ratio":0,"project":{"name":"Railsyard","id":15},"author":{"name":"Francesco
+        Disperati","id":19},"id":731},{"priority":{"name":"Normal","id":4},"updated_on":"2012/03/14
+        23:44:48 +0100","subject":"paradosso zazit","assigned_to":{"name":"Stefano
+        Verna","id":18},"status":{"name":"New","id":1},"tracker":{"name":"Feature","id":2},"start_date":"2012/03/14","description":"Quando
+        si clicca su zazit mentre si \u00e8 sullo stesso sito zazie.it deve apparire
+        un alert che dice \"u\u00e8, che stai a fa?!\"\r\nDa Digitpub stanno pensando
+        ad un frase da mettere \"letteraria\" tipo\r\n\r\n_L''insieme di tutti gli
+        insiemi che non appartengono a se stessi appartiene a se stesso se e solo
+        se non appartiene a se stesso_\r\n\r\noppure\r\n\r\n_In un villaggio c''\u00e8
+        un unico barbiere. Il barbiere rade tutti (e soli) gli uomini che non si radono
+        da soli. Il barbiere rade s\u00e9 stesso?_\r\n\r\nintanto si pu\u00f2 prevedere
+        la funzionalit\u00e0 con uno schifosissimo: \"Paradosso: Zazit non pu\u00f2
+        includere Zazie! Usa Zazit al di fuori di Zazie\"","created_on":"2012/03/14
+        23:44:48 +0100","done_ratio":0,"project":{"name":"zazit","id":52},"author":{"name":"Matteo
+        Papadopoulos","id":10},"id":728}],"total_count":12,"limit":25}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:52 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/74.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:52 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"e572d8cb37db9353fd6d0d2dfb4e3f0a"'
+      X-Runtime:
+      - '27'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '292'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Cantiere Creativo","id":48},"updated_on":"2012/04/11
+        10:19:13 +0200","description":"progetto di formazione di una community che
+        gravity intorno a ruby","created_on":"2012/04/11 10:19:13 +0200","identifier":"flor","name":"Florence
+        on ruby","id":74,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:52 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/56.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:52 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"65d33299faf455805a802660e349d516"'
+      X-Runtime:
+      - '30'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '241'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"LCD (Gianni Sinni)","id":55},"updated_on":"2012/03/14
+        21:52:12 +0100","description":"","created_on":"2012/03/14 21:52:12 +0100","identifier":"giunti-web","name":"Sito
+        Giunti Educational ","id":56,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:53 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/56.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:53 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"65d33299faf455805a802660e349d516"'
+      X-Runtime:
+      - '22'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '241'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"LCD (Gianni Sinni)","id":55},"updated_on":"2012/03/14
+        21:52:12 +0100","description":"","created_on":"2012/03/14 21:52:12 +0100","identifier":"giunti-web","name":"Sito
+        Giunti Educational ","id":56,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:53 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/56.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:53 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"65d33299faf455805a802660e349d516"'
+      X-Runtime:
+      - '22'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '241'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"LCD (Gianni Sinni)","id":55},"updated_on":"2012/03/14
+        21:52:12 +0100","description":"","created_on":"2012/03/14 21:52:12 +0100","identifier":"giunti-web","name":"Sito
+        Giunti Educational ","id":56,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:53 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/56.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:53 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"65d33299faf455805a802660e349d516"'
+      X-Runtime:
+      - '25'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '241'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"LCD (Gianni Sinni)","id":55},"updated_on":"2012/03/14
+        21:52:12 +0100","description":"","created_on":"2012/03/14 21:52:12 +0100","identifier":"giunti-web","name":"Sito
+        Giunti Educational ","id":56,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:54 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/52.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:54 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"3109ce9ff7ace69951ab003c4a995719"'
+      X-Runtime:
+      - '137'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '294'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"DigitPub","id":44},"updated_on":"2012/03/14
+        20:08:43 +0100","description":"Extension per firefox e chrome per l''aggiunta
+        di libri trovati in rete al sito di zazie","created_on":"2012/03/14 20:08:43
+        +0100","identifier":"zazit","name":"zazit","id":52,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:54 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/52.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:54 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"3109ce9ff7ace69951ab003c4a995719"'
+      X-Runtime:
+      - '24'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '294'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"DigitPub","id":44},"updated_on":"2012/03/14
+        20:08:43 +0100","description":"Extension per firefox e chrome per l''aggiunta
+        di libri trovati in rete al sito di zazie","created_on":"2012/03/14 20:08:43
+        +0100","identifier":"zazit","name":"zazit","id":52,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:54 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/52.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:54 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"3109ce9ff7ace69951ab003c4a995719"'
+      X-Runtime:
+      - '30'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '294'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"DigitPub","id":44},"updated_on":"2012/03/14
+        20:08:43 +0100","description":"Extension per firefox e chrome per l''aggiunta
+        di libri trovati in rete al sito di zazie","created_on":"2012/03/14 20:08:43
+        +0100","identifier":"zazit","name":"zazit","id":52,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:55 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/52.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:55 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"3109ce9ff7ace69951ab003c4a995719"'
+      X-Runtime:
+      - '29'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '294'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"DigitPub","id":44},"updated_on":"2012/03/14
+        20:08:43 +0100","description":"Extension per firefox e chrome per l''aggiunta
+        di libri trovati in rete al sito di zazie","created_on":"2012/03/14 20:08:43
+        +0100","identifier":"zazit","name":"zazit","id":52,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:55 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/15.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:55 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"f1ad876ef1eaa9b0ac44f118bd1fd38c"'
+      X-Runtime:
+      - '30'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '245'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Cantiere Creativo","id":48},"updated_on":"2012/03/15
+        17:51:03 +0100","description":"CMS Cantiere Creativo","created_on":"2010/03/15
+        09:20:28 +0100","identifier":"railsyard","name":"Railsyard","id":15,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:55 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/15.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:55 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"f1ad876ef1eaa9b0ac44f118bd1fd38c"'
+      X-Runtime:
+      - '25'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '245'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Cantiere Creativo","id":48},"updated_on":"2012/03/15
+        17:51:03 +0100","description":"CMS Cantiere Creativo","created_on":"2010/03/15
+        09:20:28 +0100","identifier":"railsyard","name":"Railsyard","id":15,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:56 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/52.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:56 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"3109ce9ff7ace69951ab003c4a995719"'
+      X-Runtime:
+      - '22'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '294'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"DigitPub","id":44},"updated_on":"2012/03/14
+        20:08:43 +0100","description":"Extension per firefox e chrome per l''aggiunta
+        di libri trovati in rete al sito di zazie","created_on":"2012/03/14 20:08:43
+        +0100","identifier":"zazit","name":"zazit","id":52,"homepage":""}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:56 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/users/current.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:56 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"500d2715604701bafcb8473e4ebac37e"'
+      X-Runtime:
+      - '52'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '196'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"user":{"mail":"stefano.verna@welaika.com","last_login_on":"2012/05/03
+        11:45:10 +0200","lastname":"Verna","login":"steffoz","created_on":"2010/02/11
+        09:34:28 +0100","firstname":"Stefano","id":4}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:56 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/issues.json?assigned_to_id=4&key=WELAIKA_TOKEN&status_id=open
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:56 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"4e0411f3e23464c32428942d0089976e"'
+      X-Runtime:
+      - '52'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Set-Cookie:
+      - _redmine_session=BAh7CDoPc2Vzc2lvbl9pZCIlMzQ4ZTdjMDU3NDFmZjNkMGU1ZTRkNTQ1NGYxMjllNDg6CnF1ZXJ5ewk6DWdyb3VwX2J5MDoPcHJvamVjdF9pZDA6EWNvbHVtbl9uYW1lczA6DGZpbHRlcnN7ByITYXNzaWduZWRfdG9faWR7BzoLdmFsdWVzWwYiBjQ6DW9wZXJhdG9yIgY9Ig5zdGF0dXNfaWR7BzsLWwYiCHBlbjsMIgZvIhZpc3N1ZXNfaW5kZXhfc29ydCIMaWQ6ZGVzYw%3D%3D--2a9c140c8711eb6c2f817569cf09a41866fca2a7;
+        path=/; HttpOnly
+      Content-Length:
+      - '3476'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"limit":25,"issues":[{"status":{"name":"New","id":1},"updated_on":"2012/05/03
+        09:06:07 +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"-
+        per tutte le app, tutti i mercati, solo iOS, proviamo a prendere il valore
+        dei \"new users\" e metterlo a newUsers/4\r\n- per tutte le app, tutti i mercati,
+        solo Android, proviamo a prendere il valore dei \"new users\" e metterlo a
+        newUsers*10\r\n","tracker":{"name":"Feature","id":2},"start_date":"2012/05/03","created_on":"2012/05/03
+        09:04:06 +0200","subject":"New Users iOS","author":{"name":"Paolo Romagnoli","id":63},"id":3316,"priority":{"name":"Urgent","id":6},"project":{"name":"Dashboard
+        FIAT","id":82}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 18:15:57
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:57 +0200","subject":"Orlando Locator","author":{"name":"Stefano Verna","id":4},"id":3296,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 18:15:49
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:49 +0200","subject":"Il Paniere","author":{"name":"Stefano Verna","id":4},"id":3295,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 18:15:38
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:38 +0200","subject":"Scheda Prodotto","author":{"name":"Stefano Verna","id":4},"id":3294,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 18:15:23
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:23 +0200","subject":"Ricette","author":{"name":"Stefano Verna","id":4},"id":3293,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 14:36:28
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Bug","id":1},"start_date":"2012/04/27","created_on":"2012/04/27
+        14:36:28 +0200","subject":"Some users have mentioned that the intranet wiki
+        does not support ''table'' markup. Can that be updated to work?","author":{"name":"Stefano
+        Verna","id":4},"id":3286,"priority":{"name":"Normal","id":4},"project":{"name":"Orchid","id":101}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27
+        14:36:51 +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"Ok.
+        Also, there is an issue with the blog emails - could you strip out the html
+        (particularly \u003Ca\u003E tags) in the blog emails so that the text appears
+        clean? I attach an example email.\r\n\r\nhttp://o7.no/IfiSnP","tracker":{"name":"Bug","id":1},"start_date":"2012/04/25","created_on":"2012/04/25
+        13:02:50 +0200","subject":"Issue with the blog emails","author":{"name":"Stefano
+        Verna","id":4},"id":3269,"priority":{"name":"Normal","id":4},"project":{"name":"Orchid","id":101}}],"total_count":13,"offset":0}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:56 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/82.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:56 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"b17ba1116d4aaaecb964417078e703b4"'
+      X-Runtime:
+      - '28'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '288'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Seac02","id":62},"updated_on":"2012/02/17
+        18:05:04 +0100","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"","created_on":"2012/01/23
+        09:05:05 +0100","identifier":"dashboard-fiat","name":"Dashboard FIAT","homepage":"","id":82}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:57 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/52.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:56 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6e1b9b5ff1a1f8d0298b3d1e0fa4a4af"'
+      X-Runtime:
+      - '24'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '305'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Sites dev","id":32},"updated_on":"2011/09/20
+        10:54:27 +0200","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"Il
+        sito di Olasagasti","created_on":"2011/09/20 10:54:27 +0200","identifier":"olasagasti","name":"Olasagasti
+        ","homepage":"","id":52}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:57 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/52.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:57 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6e1b9b5ff1a1f8d0298b3d1e0fa4a4af"'
+      X-Runtime:
+      - '20'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '305'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Sites dev","id":32},"updated_on":"2011/09/20
+        10:54:27 +0200","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"Il
+        sito di Olasagasti","created_on":"2011/09/20 10:54:27 +0200","identifier":"olasagasti","name":"Olasagasti
+        ","homepage":"","id":52}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:57 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/52.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:57 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6e1b9b5ff1a1f8d0298b3d1e0fa4a4af"'
+      X-Runtime:
+      - '16'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '305'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Sites dev","id":32},"updated_on":"2011/09/20
+        10:54:27 +0200","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"Il
+        sito di Olasagasti","created_on":"2011/09/20 10:54:27 +0200","identifier":"olasagasti","name":"Olasagasti
+        ","homepage":"","id":52}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:57 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/52.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:57 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6e1b9b5ff1a1f8d0298b3d1e0fa4a4af"'
+      X-Runtime:
+      - '20'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '305'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Sites dev","id":32},"updated_on":"2011/09/20
+        10:54:27 +0200","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"Il
+        sito di Olasagasti","created_on":"2011/09/20 10:54:27 +0200","identifier":"olasagasti","name":"Olasagasti
+        ","homepage":"","id":52}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:57 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/101.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:57 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"d6285a3cb224ea4aeab8d914d70f4ffc"'
+      X-Runtime:
+      - '184'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '238'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"updated_on":"2012/04/25 12:59:43 +0200","custom_fields":[{"value":"0","name":"Send
+        Diff Emails","id":1}],"description":"","created_on":"2012/04/25 12:59:43 +0200","identifier":"orchid","name":"Orchid","homepage":"","id":101}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:57 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/101.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:55:57 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"d6285a3cb224ea4aeab8d914d70f4ffc"'
+      X-Runtime:
+      - '20'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '238'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"updated_on":"2012/04/25 12:59:43 +0200","custom_fields":[{"value":"0","name":"Send
+        Diff Emails","id":1}],"description":"","created_on":"2012/04/25 12:59:43 +0200","identifier":"orchid","name":"Orchid","homepage":"","id":101}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:55:57 GMT
+recorded_with: VCR 2.0.1

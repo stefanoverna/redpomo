@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://code.welaika.com/issues/3290.json?key=WELAIKA_TOKEN
+    body:
+      encoding: UTF-8
+      string: ! '{"issue":{"status_id":5,"notes":"foobar"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '42'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:30:14 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      X-Runtime:
+      - '396'
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _redmine_session=BAh7BzoPc2Vzc2lvbl9pZCIlMjFjM2E3NWM3YTkzYzg5OTI5NTdmNWQzMzZiNmQ5NzYiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIhlNb2RpZmljYSBlZmZldHR1YXRhLgY6CkB1c2VkewY7B0Y%3D--70b4a63bf9001e4fd949e12c69bb218eea2de03c;
+        path=/; HttpOnly
+      Content-Length:
+      - '1'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! ' '
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:30:15 GMT
+recorded_with: VCR 2.0.1

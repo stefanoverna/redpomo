@@ -1,0 +1,449 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://code.welaika.com/users/current.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:05 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"500d2715604701bafcb8473e4ebac37e"'
+      X-Runtime:
+      - '52'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '196'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"user":{"mail":"stefano.verna@welaika.com","last_login_on":"2012/05/03
+        11:45:10 +0200","lastname":"Verna","login":"steffoz","created_on":"2010/02/11
+        09:34:28 +0100","firstname":"Stefano","id":4}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:05 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/issues.json?assigned_to_id=4&key=WELAIKA_TOKEN&status_id=open
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:05 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"4e0411f3e23464c32428942d0089976e"'
+      X-Runtime:
+      - '52'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Set-Cookie:
+      - _redmine_session=BAh7CDoPc2Vzc2lvbl9pZCIlN2YwMGE3OTMyNDRiNWVlNjlkYWRmMjliM2YyNjJkMjA6CnF1ZXJ5ewk6DWdyb3VwX2J5MDoPcHJvamVjdF9pZDA6EWNvbHVtbl9uYW1lczA6DGZpbHRlcnN7ByITYXNzaWduZWRfdG9faWR7BzoLdmFsdWVzWwYiBjQ6DW9wZXJhdG9yIgY9Ig5zdGF0dXNfaWR7BzsLWwYiCHBlbjsMIgZvIhZpc3N1ZXNfaW5kZXhfc29ydCIMaWQ6ZGVzYw%3D%3D--2d196af3a6fd5ff1c69c21c58e26d1828d313eb2;
+        path=/; HttpOnly
+      Content-Length:
+      - '3476'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"limit":25,"issues":[{"status":{"name":"New","id":1},"updated_on":"2012/05/03
+        09:06:07 +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"-
+        per tutte le app, tutti i mercati, solo iOS, proviamo a prendere il valore
+        dei \"new users\" e metterlo a newUsers/4\r\n- per tutte le app, tutti i mercati,
+        solo Android, proviamo a prendere il valore dei \"new users\" e metterlo a
+        newUsers*10\r\n","tracker":{"name":"Feature","id":2},"start_date":"2012/05/03","created_on":"2012/05/03
+        09:04:06 +0200","subject":"New Users iOS","author":{"name":"Paolo Romagnoli","id":63},"id":3316,"priority":{"name":"Urgent","id":6},"project":{"name":"Dashboard
+        FIAT","id":82}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 18:15:57
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:57 +0200","subject":"Orlando Locator","author":{"name":"Stefano Verna","id":4},"id":3296,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 18:15:49
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:49 +0200","subject":"Il Paniere","author":{"name":"Stefano Verna","id":4},"id":3295,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 18:15:38
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:38 +0200","subject":"Scheda Prodotto","author":{"name":"Stefano Verna","id":4},"id":3294,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 18:15:23
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:23 +0200","subject":"Ricette","author":{"name":"Stefano Verna","id":4},"id":3293,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27 14:36:28
+        +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"","tracker":{"name":"Bug","id":1},"start_date":"2012/04/27","created_on":"2012/04/27
+        14:36:28 +0200","subject":"Some users have mentioned that the intranet wiki
+        does not support ''table'' markup. Can that be updated to work?","author":{"name":"Stefano
+        Verna","id":4},"id":3286,"priority":{"name":"Normal","id":4},"project":{"name":"Orchid","id":101}},{"status":{"name":"New","id":1},"updated_on":"2012/04/27
+        14:36:51 +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"Ok.
+        Also, there is an issue with the blog emails - could you strip out the html
+        (particularly \u003Ca\u003E tags) in the blog emails so that the text appears
+        clean? I attach an example email.\r\n\r\nhttp://o7.no/IfiSnP","tracker":{"name":"Bug","id":1},"start_date":"2012/04/25","created_on":"2012/04/25
+        13:02:50 +0200","subject":"Issue with the blog emails","author":{"name":"Stefano
+        Verna","id":4},"id":3269,"priority":{"name":"Normal","id":4},"project":{"name":"Orchid","id":101}}],"total_count":13,"offset":0}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:05 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/82.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:05 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"b17ba1116d4aaaecb964417078e703b4"'
+      X-Runtime:
+      - '208'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '288'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Seac02","id":62},"updated_on":"2012/02/17
+        18:05:04 +0100","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"","created_on":"2012/01/23
+        09:05:05 +0100","identifier":"dashboard-fiat","name":"Dashboard FIAT","homepage":"","id":82}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:06 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/52.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:06 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6e1b9b5ff1a1f8d0298b3d1e0fa4a4af"'
+      X-Runtime:
+      - '332'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '305'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Sites dev","id":32},"updated_on":"2011/09/20
+        10:54:27 +0200","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"Il
+        sito di Olasagasti","created_on":"2011/09/20 10:54:27 +0200","identifier":"olasagasti","name":"Olasagasti
+        ","homepage":"","id":52}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:06 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/52.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:06 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6e1b9b5ff1a1f8d0298b3d1e0fa4a4af"'
+      X-Runtime:
+      - '24'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '305'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Sites dev","id":32},"updated_on":"2011/09/20
+        10:54:27 +0200","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"Il
+        sito di Olasagasti","created_on":"2011/09/20 10:54:27 +0200","identifier":"olasagasti","name":"Olasagasti
+        ","homepage":"","id":52}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:06 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/52.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:06 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6e1b9b5ff1a1f8d0298b3d1e0fa4a4af"'
+      X-Runtime:
+      - '24'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '305'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Sites dev","id":32},"updated_on":"2011/09/20
+        10:54:27 +0200","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"Il
+        sito di Olasagasti","created_on":"2011/09/20 10:54:27 +0200","identifier":"olasagasti","name":"Olasagasti
+        ","homepage":"","id":52}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:06 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/52.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:06 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"6e1b9b5ff1a1f8d0298b3d1e0fa4a4af"'
+      X-Runtime:
+      - '24'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '305'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"Sites dev","id":32},"updated_on":"2011/09/20
+        10:54:27 +0200","custom_fields":[{"value":"0","name":"Send Diff Emails","id":1}],"description":"Il
+        sito di Olasagasti","created_on":"2011/09/20 10:54:27 +0200","identifier":"olasagasti","name":"Olasagasti
+        ","homepage":"","id":52}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:06 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/101.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:06 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"d6285a3cb224ea4aeab8d914d70f4ffc"'
+      X-Runtime:
+      - '28'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '238'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"updated_on":"2012/04/25 12:59:43 +0200","custom_fields":[{"value":"0","name":"Send
+        Diff Emails","id":1}],"description":"","created_on":"2012/04/25 12:59:43 +0200","identifier":"orchid","name":"Orchid","homepage":"","id":101}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:06 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/projects/101.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 May 2012 12:42:06 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"d6285a3cb224ea4aeab8d914d70f4ffc"'
+      X-Runtime:
+      - '184'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '238'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"updated_on":"2012/04/25 12:59:43 +0200","custom_fields":[{"value":"0","name":"Send
+        Diff Emails","id":1}],"description":"","created_on":"2012/04/25 12:59:43 +0200","identifier":"orchid","name":"Orchid","homepage":"","id":101}}'
+    http_version:
+  recorded_at: Sat, 05 May 2012 12:42:07 GMT
+recorded_with: VCR 2.0.1

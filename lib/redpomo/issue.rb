@@ -1,7 +1,7 @@
 module Redpomo
   class Issue
 
-    attr_reader :title, :issue_id, :project, :tracker
+    attr_reader :title, :issue_id, :project, :tracker, :due_date
 
     def initialize(tracker, data)
       @title = data["subject"]
@@ -16,7 +16,7 @@ module Redpomo
       label << @due_date.strftime("%Y-%m-%d") if @due_date.present?
       label << "##{issue_id}"
       label << "+#{project}"
-      label << "@#{tracker}"
+      label << "@#{tracker.name}"
       Todo::Task.new(label.join(" "))
     end
 

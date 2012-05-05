@@ -1,44 +1,49 @@
+require 'active_support/core_ext/hash'
 require 'redpomo/issue'
-require 'redpomo/cache'
+require 'redpomo/config'
 
 module Redpomo
-
   class Tracker
-    attr_reader :name
 
-    def initialize(options)
+    def self.find(name)
+      if data = Config.trackers_data[name.to_sym]
+        Tracker.new(name.to_sym, data)
+      end
+    end
+
+    def self.all
+      Config.trackers_data.map do |name, data|
+        Tracker.new(name.to_sym, data)
+      end
+    end
+
+    attr_reader :name, :base_url
+
+    def initialize(name, options)
       options.symbolize_keys!
-      @name = options[:name]
+      @name = name
       @base_url = options[:url]
       @api_key = options[:token]
       @default_project = options[:default_project]
-      @closed_status_id = options[:closed_status]
-    end
-
-    def context
-      "@#{name}"
-    end
-
-    def current_user_id
-      get("/users/current")["user"]["id"]
+      @closed_status_id = options[:closed_status].to_i
     end
 
     def issues
       data = get("/issues", assigned_to_id: current_user_id, status_id: "open")
       data["issues"].map do |issue|
         issue["project"] = project_identifier_for(issue["project"]["id"])
-        Issue.new(@name, issue)
+        Issue.new(self, issue)
       end
     end
 
-    def push_entry(entry)
+    def push_entry!(entry)
       task = entry.to_task
       time_entry = {}
 
-      if task.issues.any?
-        time_entry[:issue_id] = task.issues.first.gsub(/^#/,'')
-      elsif task.projects.any?
-        time_entry[:project_id] = task.projects.first.gsub(/^\+/,'')
+      if issue = task.issue
+        time_entry[:issue_id] = issue
+      elsif project = task.project
+        time_entry[:project_id] = project
       else
         time_entry[:project_id] = @default_project
       end
@@ -50,47 +55,53 @@ module Redpomo
       post("/time_entries", time_entry: time_entry)
     end
 
-    def close_issue(id, message = nil)
-      put("/issues/#{id}", issue: { status_id: "5", notes: message })
-    end
-
-    def url_for(object)
-      if object.is_a? Todo::Task
-        if object.issues.any?
-          issue = object.issues.first.gsub(/^#/,'')
-          "#{@base_url}/issues/#{issue}"
-        elsif object.projects.any?
-          project = task.projects.first.gsub(/^\+/,'')
-          "#{@base_url}/projects/#{issue}"
-        else
-          "#{@base_url}/projects/#{@default_project}"
-        end
-      end
+    def close_issue!(id, message = nil)
+      issue = { status_id: @closed_status_id }
+      issue[:notes] = message if message.present?
+      put("/issues/#{id}", issue: issue)
     end
 
     private
 
     def project_identifier_for(project_id)
-      Cache.get("#{@name}:#{project_id}:identifier") do
+      Config.cache.get("#{@name}:#{project_id}:identifier") do
         data = get("/projects/#{project_id}")
         data["project"]["identifier"]
       end
     end
 
-    def get(url, params = {})
-      params = params.merge(key: @api_key)
-      result = RestClient.get(@base_url + url + ".json", params: params, accept: :json, content_type: :json)
-      JSON.parse(result)
+    def current_user_id
+      get("/users/current")["user"]["id"]
     end
 
-    def put(url, data)
-      result = RestClient.put(@base_url + url + ".json", data.to_json, params: { key: @api_key }, accept: :json, content_type: :json)
-      JSON.parse(result)
+    def get(url, params = {})
+      request(:get, url, params)
     end
 
     def post(url, data)
-      result = RestClient.post(@base_url + url + ".json", data.to_json, params: { key: @api_key }, accept: :json, content_type: :json)
-      JSON.parse(result)
+      request(:post, url, body: data)
+    end
+
+    def put(url, data)
+      request(:put, url, body: data)
+    end
+
+    def request(type, url, params = {})
+      require 'rest_client'
+      require 'json'
+      args = []
+      args << @base_url + url + ".json"
+      args << params.delete(:body).to_json unless type == :get
+      args << {
+        accept: :json,
+        content_type: :json,
+        params: params.merge(key: @api_key)
+      }
+      parse RestClient.send(type, *args)
+    end
+
+    def parse(json)
+      json && json.length >= 2 ? JSON.parse(json) : nil
     end
 
   end

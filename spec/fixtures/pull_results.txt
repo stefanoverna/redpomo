@@ -1,0 +1,20 @@
+Another task @home
+mailchimp #1006 +flor @cantiere
+gestione utenti #987 +giunti-web @cantiere
+Documentazione server su Wiki #986 +giunti-web @cantiere
+Form richiesta kit #985 +giunti-web @cantiere
+Invia libro ad un amico #976 +giunti-web @cantiere
+Immagini promo per chrome 2012-04-04 #859 +zazit @cantiere
+Correzioni frase e logo zazit 2012-04-04 #858 +zazit @cantiere
+icone per safari 2012-04-02 #839 +zazit @cantiere
+icona per chrome market 2012-04-02 #837 +zazit @cantiere
+Rel Canonical e rel author #820 +railsyard @cantiere
+DSL backend per la gestione dei model #731 +railsyard @cantiere
+paradosso zazit #728 +zazit @cantiere
+New Users iOS #3316 +dashboard-fiat @welaika
+Orlando Locator #3296 +olasagasti @welaika
+Il Paniere #3295 +olasagasti @welaika
+Scheda Prodotto #3294 +olasagasti @welaika
+Ricette #3293 +olasagasti @welaika
+Some users have mentioned that the intranet wiki does not support 'table' markup. Can that be updated to work? #3286 +orchid @welaika
+Issue with the blog emails #3269 +orchid @welaika
