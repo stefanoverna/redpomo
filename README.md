@@ -1,4 +1,5 @@
-# Redpomo: Redmine, Pomodoro.app and Todo-txt. Toghether.
+# Redpomo
+## Redmine, Pomodoro.app and Todo-txt. Together.
 
 [![Build Status](https://secure.travis-ci.org/stefanoverna/redpomo.png)](http://travis-ci.org/stefanoverna/redpomo)
 
