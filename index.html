@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Redpomo by stefanoverna</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Redpomo</h1>
+        <p>Redmine, Pomodoro.app and Todo-txt. Together.</p>
+        <p class="view"><a href="https://github.com/stefanoverna/redpomo">View the Project on GitHub <small>stefanoverna/redpomo</small></a></p>
+        <ul>
+          <li><a href="https://github.com/stefanoverna/redpomo/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/stefanoverna/redpomo/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/stefanoverna/redpomo">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Redpomo</h1>
+
+<h2>Redmine, Pomodoro.app and Todo-txt. Together.</h2>
+
+<p>Redpomo is the classic "scratch your own itch" project:</p>
+
+<ul>
+<li>It makes it really easy to manage Redmine issues from the command-line;</li>
+<li>It is able to sync Redmine issues with your local Todo.txt tasks;</li>
+<li>It can start Pomodoro.app timer on a specific Todo.txt task, and is
+able to "push" the logged pomodoros as Redmine timetracks.</li>
+</ul><h2>Usage</h2>
+
+<pre><code>› redpomo help
+Tasks:
+  redpomo close TASK    # Marks a todo.txt task as complete, and closes the related Redmine issue
+  redpomo help [TASK]   # Describe available tasks or one specific task
+  redpomo open TASK     # Opens up the Redmine issue page of the selected task
+  redpomo pull          # Imports Redmine open issues into local todo.txt
+  redpomo push LOGFILE  # Parses Pomodoro export file and imports to Redmine clients
+  redpomo start TASK    # Starts a Pomodoro session for the selected task
+</code></pre>
+
+<h2>Installation</h2>
+
+<p>Install it yourself as:</p>
+
+<pre><code>$ gem install redpomo
+</code></pre>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/stefanoverna">stefanoverna</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
