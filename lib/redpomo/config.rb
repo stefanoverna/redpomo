@@ -20,31 +20,5 @@ module Redpomo
       @@cache = data["cache"] ? FileCache : NullCache
     end
 
-    # def todo_path
-    #   File.expand_path(@data["todo"])
-    # end
-
-    # def tasks
-    #   @tasks ||= Todo::List.new(todo_path)
-    # end
-
-    # def find_task(number)
-    #   tasks[number.to_i - 1]
-    # end
-
-    # def trackers
-    #   @trackers ||= @data["trackers"].map do |key, data|
-    #     Tracker.new(data.merge(name: key))
-    #   end
-    # end
-
-    # def issues
-    #   [].tap do |issues|
-    #     trackers.each do |tracker|
-    #       issues << tracker.issues
-    #     end
-    #   end.flatten
-    # end
-
   end
 end

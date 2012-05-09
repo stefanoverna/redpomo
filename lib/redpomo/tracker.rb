@@ -26,10 +26,20 @@ module Redpomo
       @api_key = options[:token]
       @default_project = options[:default_project]
       @closed_status_id = options[:closed_status].to_i
+      @priorities = options[:priorities]
+    end
+
+    def todo_priority(priority_name)
+      return nil if @priorities.nil?
+      if index = @priorities.index(priority_name)
+        "(#{"ABCDE"[index]})"
+      else
+        nil
+      end
     end
 
     def issues
-      data = get("/issues", assigned_to_id: current_user_id, status_id: "open")
+      data = get("/issues", assigned_to_id: current_user_id, status_id: "open", limit: 100)
       data["issues"].map do |issue|
         issue["project"] = project_identifier_for(issue["project"]["id"])
         Issue.new(self, issue)
