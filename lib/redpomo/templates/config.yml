@@ -1,0 +1,9 @@
+---
+todo: "~/Documents/todo/todo.txt"                    # path of your local todo.txt
+trackers:
+  my_tracker:                                        # this is the name of the context you want to use i.e. @my_tracker
+    url: "http://my_tracker.com"                     # the URL of your Redmine instance
+    token: ""                                        # find the API key in "http://mytracker.com/my/account"
+    default_project: "project"                       # if timetracks you need to push don't have a +project specified, use this
+    closed_status: 5                                 # identifier of the status used to mark issues as closed (5 should be "Closed" on most Redmine instances)
+    priorities: [ "Immediate", "Urgent", "High" ]    # list of priorities sorted by.. uhm.. priority. The first one with get (A), then (B), (C), etc.

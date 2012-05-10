@@ -98,4 +98,6 @@ describe Redpomo::CLI do
     end
   end
 
+  pending "init"
+
 end

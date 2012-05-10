@@ -5,9 +5,13 @@ require 'redpomo/task_list'
 require 'redpomo/entry'
 require 'redpomo/entries_printer'
 require 'redpomo/fuzzy_converter'
+require 'redpomo/config_generator'
 
 module Redpomo
   class CLI < ::Thor
+    map "p" => :pull
+    map "o" => :open
+    map "c" => :close
 
     desc "pull", "imports Redmine open issues into local todo.txt"
     method_option :config, aliases: "-c", default: '~/.redpomo'
@@ -60,6 +64,12 @@ module Redpomo
       task = TaskList.find(task_number)
       task.done!
       task.close_issue!
+    end
+
+    desc "init", "generates a .redpomo configuration file on your home directory"
+    method_option :path, aliases: "-p", default: '~/.redpomo'
+    def init
+      ConfigGenerator.start([ @options[:path] ])
     end
 
     private
