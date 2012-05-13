@@ -14,6 +14,7 @@ module Redpomo
 
     def self.load_from_yaml(path)
       config_path = File.expand_path(path)
+      return unless File.exists?(config_path)
       data = YAML::load_file(config_path)
 
       @@todo_path = File.expand_path(data["todo"], File.dirname(config_path))
