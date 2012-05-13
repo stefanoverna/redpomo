@@ -5,7 +5,8 @@
 
 Redpomo is the classic "scratch your own itch" project:
 
-* It makes it really easy to manage Redmine issues from the command-line;
+* It makes it really easy to manage (create, close, browse) Redmine issues
+  from the command-line;
 * It is able to sync Redmine issues with your local Todo.txt tasks;
 * It can start Pomodoro.app timer on a specific Todo.txt task, and is
   able to "push" the logged pomodoros as Redmine timetracks.
@@ -14,26 +15,28 @@ Redpomo is the classic "scratch your own itch" project:
 
     › redpomo help
     Tasks:
-      redpomo close TASK    # Marks a todo.txt task as complete, and closes the related Redmine issue
+      redpomo add           # creates a new task on Todo.txt, forwarding it to the remote tracker
+      redpomo close TASK    # marks a todo.txt task as complete, and closes the related Redmine issue
       redpomo help [TASK]   # Describe available tasks or one specific task
-      redpomo open TASK     # Opens up the Redmine issue page of the selected task
-      redpomo pull          # Imports Redmine open issues into local todo.txt
-      redpomo push LOGFILE  # Parses Pomodoro export file and imports to Redmine clients
-      redpomo start TASK    # Starts a Pomodoro session for the selected task
+      redpomo init          # generates a .redpomo configuration file on your home directory
+      redpomo open TASK     # opens up the Redmine issue page of the selected task
+      redpomo pull          # imports Redmine open issues into local todo.txt
+      redpomo push LOGFILE  # parses Pomodoro export file and imports to Redmine clients
+      redpomo start TASK    # starts a Pomodoro session for the selected task
+
+    Options:
+      -c, [--config=CONFIG] # Default: ~/.redpomo
+          [--no-color]
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'redpomo'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install redpomo
+
+And then configure it:
+
+    $ redpomo init
 
 ## Contributing
 
