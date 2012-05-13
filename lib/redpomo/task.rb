@@ -16,6 +16,8 @@ module Redpomo
   class Task
 
     delegate :orig, to: :@task
+    delegate :priority, to: :@task
+    delegate :date, to: :@task
 
     ISSUES_REGEXP = /(?:\s+|^)#[0-9]+/
 
@@ -80,6 +82,15 @@ module Redpomo
 
     def tracker
       Tracker.find(context)
+    end
+
+    def to_issue
+      issue = Issue.new(tracker)
+      issue.subject = text
+      issue.project_id = project
+      issue.due_date = date
+      issue.priority_id = tracker.issue_priority_id(priority)
+      issue
     end
 
   end

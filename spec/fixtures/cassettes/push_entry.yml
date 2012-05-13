@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://code.welaika.com/time_entries.json?key=1dd4ac72b085df0e91c84b924c36cad48e7b5481
+    body:
+      encoding: UTF-8
+      string: ! '{"time_entry":{"issue_id":3392,"spent_on":"2012-01-01","hours":0.001388888888888889,"comments":"Foobar"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '105'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 13 May 2012 12:27:38 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      X-Runtime:
+      - '80'
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _redmine_session=BAh7BjoPc2Vzc2lvbl9pZCIlZmVlOTJlNzQ0NDQxZmQ1YjBhYzJhZDhlMmVkYjc3ODY%3D--be9fdcbbc0ed25d715650a2684f1a590641636a4;
+        path=/; HttpOnly
+      Location:
+      - http://code.welaika.com/time_entries/4015
+      Content-Length:
+      - '321'
+      Status:
+      - '201'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"time_entry":{"spent_on":"2012/01/01","updated_on":"2012/05/13 14:27:38
+        +0200","activity":{"name":"Development","id":9},"user":{"name":"Stefano Verna","id":4},"created_on":"2012/05/13
+        14:27:38 +0200","hours":0.00138888888888889,"comments":"Foobar","issue":{"id":3392},"id":4015,"project":{"name":"Olasagasti
+        ","id":52}}}'
+    http_version: 
+  recorded_at: Sun, 13 May 2012 12:27:38 GMT
+recorded_with: VCR 2.0.1

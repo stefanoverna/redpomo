@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://code.welaika.com/users/current.json?key=1dd4ac72b085df0e91c84b924c36cad48e7b5481
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 13 May 2012 12:36:06 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"210f37abc00e2352ce9a7ebfc82e684d"'
+      X-Runtime:
+      - '212'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '196'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"user":{"mail":"stefano.verna@welaika.com","last_login_on":"2012/05/13
+        11:17:28 +0200","lastname":"Verna","login":"steffoz","created_on":"2010/02/11
+        09:34:28 +0100","firstname":"Stefano","id":4}}'
+    http_version: 
+  recorded_at: Sun, 13 May 2012 12:36:07 GMT
+- request:
+    method: post
+    uri: http://code.welaika.com/issues.json?key=1dd4ac72b085df0e91c84b924c36cad48e7b5481
+    body:
+      encoding: UTF-8
+      string: ! '{"issue":{"subject":"foo","description":"bar","due_date":"2012-12-01","project_id":"olasagasti","priority_id":5,"assigned_to_id":4}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '132'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 13 May 2012 12:36:07 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      X-Runtime:
+      - '124'
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _redmine_session=BAh7BzoPc2Vzc2lvbl9pZCIlYzJiNzBmNmU4NmVjNjY3NmZjNDcyOTgxYzMxMWE5OGQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIhpDcmVhemlvbmUgZWZmZXR0dWF0YS4GOgpAdXNlZHsGOwdG--a60050631dc0708324a571c42a5577b94471e05e;
+        path=/; HttpOnly
+      Location:
+      - http://code.welaika.com/issues/3395
+      Content-Length:
+      - '447'
+      Status:
+      - '201'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"issue":{"status":{"name":"New","id":1},"updated_on":"2012/05/13
+        14:36:07 +0200","due_date":"2012/12/01","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":0,"description":"bar","tracker":{"name":"Bug","id":1},"start_date":"2012/05/13","created_on":"2012/05/13
+        14:36:07 +0200","spent_hours":0.0,"subject":"foo","author":{"name":"Stefano
+        Verna","id":4},"id":3395,"priority":{"name":"High","id":5},"project":{"name":"Olasagasti
+        ","id":52}}}'
+    http_version: 
+  recorded_at: Sun, 13 May 2012 12:36:08 GMT
+recorded_with: VCR 2.0.1

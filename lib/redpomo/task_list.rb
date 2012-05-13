@@ -38,6 +38,7 @@ module Redpomo
       self << issue_tasks
       self.flatten!
       write!
+      Redpomo.ui.info "Pulled #{issue_tasks.count} issues."
     end
 
     def write!

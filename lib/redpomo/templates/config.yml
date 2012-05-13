@@ -1,9 +1,40 @@
 ---
-todo: "~/Documents/todo/todo.txt"                    # path of your local todo.txt
+todo: "~/Documents/todo/todo.txt"     # Path of your local Todo.txt
+
 trackers:
-  my_tracker:                                        # this is the name of the context you want to use i.e. @my_tracker
-    url: "http://my_tracker.com"                     # the URL of your Redmine instance
-    token: ""                                        # find the API key in "http://mytracker.com/my/account"
-    default_project: "project"                       # if timetracks you need to push don't have a +project specified, use this
-    closed_status: 5                                 # identifier of the status used to mark issues as closed (5 should be "Closed" on most Redmine instances)
-    priorities: [ "Immediate", "Urgent", "High" ]    # list of priorities sorted by.. uhm.. priority. The first one with get (A), then (B), (C), etc.
+
+  my_tracker:                        # This is the name of the context you want
+                                     # to use for this tracker (--> @my_tracker)
+
+    url: "http://my_tracker.com"     # The URL of your Redmine instance
+
+    token: ""                        # Find this at the following URL:
+                                     # http://mytracker.com/my/account
+
+    default_project_id: "project"    # If timetracks you're pushing don't have
+                                     # a +project specified, use this.
+
+    default_priority_id: 4           # If issues you're adding don't have a
+                                     # priority specified, then use this.
+                                     #
+                                     # -- 4 should be "Normal" on most Redmines
+
+    closed_status_id: 5              # Identifier of the status used to mark
+                                     # issues as closed. Find this ID here:
+                                     # http://mytracker.com/issue_statuses
+                                     #
+                                     # -- 5 should be "Closed" on most Redmines
+
+    priority_ids:                    # Map a Todo.txt priority with a Redmine
+                                     # priority ID.
+
+      - 7                            # -> (A)
+      - 6                            # -> (B)
+      - 5                            # -> (C)
+                                     # ... and so on
+                                     #
+                                     # Find those IDs at the following URL:
+                                     # http://mytracker.com/enumerations
+                                     #
+                                     # -- 7, 6 and 5 should be "Immediate",
+                                     # "Urgent" and "High" on most Redmines

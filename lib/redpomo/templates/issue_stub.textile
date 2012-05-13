@@ -1,0 +1,7 @@
+
+
+# Please enter the description of your new task on the first line.
+# Following lines will be used as issue descripton (textile allowed).
+#
+# Make sure to add a project and context. Lines starting with '#'
+# will be ignored, and an empty message aborts the creation.

@@ -13,9 +13,10 @@ module Redpomo
     @@cache = NullCache
 
     def self.load_from_yaml(path)
-      data = YAML::load_file(File.expand_path(path))
+      config_path = File.expand_path(path)
+      data = YAML::load_file(config_path)
 
-      @@todo_path = File.expand_path(data["todo"])
+      @@todo_path = File.expand_path(data["todo"], File.dirname(config_path))
       @@trackers_data = data["trackers"].symbolize_keys!
       @@cache = data["cache"] ? FileCache : NullCache
     end

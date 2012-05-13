@@ -1,15 +1,10 @@
-# require "active_support/core_ext"
-# require "rest-client"
-# require "todo-txt"
-# require "yaml"
-# require "json"
-# require "csv"
-# require "launchy"
-# require "applescript"
-
+require 'active_support/core_ext/module/attribute_accessors'
 require "redpomo/version"
-# require "redpomo/ext"
-# require "redpomo/cli"
+require "redpomo/ui"
 
 module Redpomo
+
+  mattr_accessor :ui
+  self.ui = UI.new
+
 end

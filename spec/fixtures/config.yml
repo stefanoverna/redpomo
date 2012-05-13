@@ -1,0 +1,12 @@
+cache: false
+trackers:
+  cantiere:
+    url: "https://project.cantierecreativo.net"
+    token: "CANTIERE_TOKEN"
+    default_project_id: "cc"
+    closed_status_id: 5
+  welaika:
+    url: "http://code.welaika.com"
+    token: "WELAIKA_TOKEN"
+    default_project_id: "welaika"
+    closed_status_id: 5

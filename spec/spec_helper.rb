@@ -8,8 +8,14 @@ end
 
 Bundler.require(:default, :development)
 
+require 'support/ruby_ext'
+require 'support/cli_helpers'
+require 'support/fixtures'
+
 RSpec.configure do |config|
   config.mock_framework = :mocha
+  config.include Spec::CLIHelpers
+  config.include Spec::Fixtures
 end
 
 VCR.configure do |c|
@@ -19,5 +25,3 @@ VCR.configure do |c|
     match_requests_on: [:method, :host, :path, :body]
   }
 end
-
-require 'support/capture'

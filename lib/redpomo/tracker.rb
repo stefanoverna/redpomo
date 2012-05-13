@@ -2,6 +2,9 @@ require 'active_support/core_ext/hash'
 require 'redpomo/issue'
 require 'redpomo/config'
 
+require 'rest_client'
+require 'json'
+
 module Redpomo
   class Tracker
 
@@ -24,26 +27,45 @@ module Redpomo
       @name = name
       @base_url = options[:url]
       @api_key = options[:token]
-      @default_project = options[:default_project]
-      @closed_status_id = options[:closed_status].to_i
-      @priorities = options[:priorities]
+      @default_project_id = options[:default_project_id]
+      @default_priority_id = options[:default_priority_id]
+      @closed_status_id = options[:closed_status_id].to_i
+      @priorities = options[:priority_ids]
     end
 
     def todo_priority(priority_name)
       return nil if @priorities.nil?
+      alphabet = ('A' .. 'Z').to_a.join
       if index = @priorities.index(priority_name)
-        "(#{"ABCDE"[index]})"
-      else
-        nil
+        "(#{alphabet[index]})"
+      end
+    end
+
+    def issue_priority_id(priority_val)
+      if index = ('A' .. 'Z').to_a.index(priority_val)
+        @priorities[index]
       end
     end
 
     def issues
       data = get("/issues", assigned_to_id: current_user_id, status_id: "open", limit: 100)
       data["issues"].map do |issue|
-        issue["project"] = project_identifier_for(issue["project"]["id"])
+        issue["project_id"] = project_identifier_for(issue["project"]["id"])
         Issue.new(self, issue)
       end
+    end
+
+    def create_issue!(issue)
+      data = {
+        subject: issue.subject,
+        description: issue.description,
+        due_date: issue.due_date,
+        project_id: issue.project_id || @default_project_id,
+        priority_id: issue.priority_id || @default_priority_id,
+        assigned_to_id: current_user_id
+      }
+
+      post("/issues", issue: data)
     end
 
     def push_entry!(entry)
@@ -55,7 +77,7 @@ module Redpomo
       elsif project = task.project
         time_entry[:project_id] = project
       else
-        time_entry[:project_id] = @default_project
+        time_entry[:project_id] = @default_project_id
       end
 
       time_entry[:spent_on] = entry.datetime
@@ -97,8 +119,6 @@ module Redpomo
     end
 
     def request(type, url, params = {})
-      require 'rest_client'
-      require 'json'
       args = []
       args << @base_url + url + ".json"
       args << params.delete(:body).to_json unless type == :get
