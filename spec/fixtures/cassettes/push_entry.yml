@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://code.welaika.com/time_entries.json?key=1dd4ac72b085df0e91c84b924c36cad48e7b5481
+    uri: http://code.welaika.com/time_entries.json?key=WELAIKA_TOKEN
     body:
       encoding: UTF-8
       string: ! '{"time_entry":{"issue_id":3392,"spent_on":"2012-01-01","hours":0.001388888888888889,"comments":"Foobar"}}'

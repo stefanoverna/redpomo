@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: put
-    uri: https://project.cantierecreativo.net/issues/838.json?key=CANTIERE_TOKEN
+    uri: http://code.welaika.com/issues/3290.json?key=WELAIKA_TOKEN
     body:
       encoding: UTF-8
-      string: ! '{"issue":{"status_id":5}}'
+      string: ! '{"issue":{"status_id":5,"notes":"bar"}}'
     headers:
       Accept:
       - application/json
@@ -14,7 +14,7 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '25'
+      - '39'
       User-Agent:
       - Ruby
   response:
@@ -23,20 +23,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 05 May 2012 12:50:41 GMT
+      - Sun, 13 May 2012 15:23:49 GMT
       Server:
-      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
-        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
       X-Powered-By:
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       X-Runtime:
-      - '2868'
+      - '120'
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _redmine_session=BAh7BzoPc2Vzc2lvbl9pZCIlYTRjNzRjYzVmMDllNDJmYTNlMzU0NmEwMWQwYTEwYzUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIhlNb2RpZmljYSBlZmZldHR1YXRhLgY6CkB1c2VkewY7B0Y%3D--1337564c1bf1f5b34c2a505039c279d6f7074532;
+      - _redmine_session=BAh7BzoPc2Vzc2lvbl9pZCIlMzFkMDkyZDBkZDFjYjA3YjgyYjY1MTU1ZGQ0MmIzNTkiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIhlNb2RpZmljYSBlZmZldHR1YXRhLgY6CkB1c2VkewY7B0Y%3D--81bc19aea06cf94b7f7703393d43f792b17fcde0;
         path=/; HttpOnly
-      - autologin=; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT
       Content-Length:
       - '1'
       Status:
@@ -46,6 +45,6 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! ' '
-    http_version:
-  recorded_at: Sat, 05 May 2012 12:50:46 GMT
+    http_version: 
+  recorded_at: Sun, 13 May 2012 15:23:49 GMT
 recorded_with: VCR 2.0.1

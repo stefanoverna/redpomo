@@ -7,7 +7,7 @@ require 'fileutils'
 describe Redpomo::CLI do
 
   let(:todo_path) {
-    file = Tempfile.new('tasks')
+    file = File.open(tmp('tasks.txt'), 'w')
     file.write read_fixture("tasks.txt")
     file.close
     file.path
@@ -16,7 +16,7 @@ describe Redpomo::CLI do
   let(:config_path) {
     config = YAML::load_file fixture("config.yml")
     config["todo"] = todo_path
-    file = Tempfile.new('config')
+    file = File.open(tmp('config.yml'), 'w')
     file.write config.to_yaml
     file.close
     file.path
@@ -26,6 +26,15 @@ describe Redpomo::CLI do
     it "pushes the specified timelog to remote trackers" do
       VCR.use_cassette('cli_push') do
         cli_redpomo "push #{fixture("timelog.csv")}"
+        out.strip.should == "Pushed 2 time entries!"
+      end
+    end
+  end
+
+  describe "push -n LOG" do
+    it "pushes the specified timelog to remote trackers" do
+      VCR.use_cassette('cli_push') do
+        cli_redpomo "push -n #{fixture("timelog.csv")}"
         out.should == read_fixture("printer_output.txt")
       end
     end
@@ -48,7 +57,7 @@ describe Redpomo::CLI do
   describe "close ISSUE" do
     it "closes issue on remote tracker and marks current task as done" do
       VCR.use_cassette('cli_close') do
-        cli_redpomo "close 1"
+        cli_redpomo "close 2 -m bar"
         File.read(todo_path).should == read_fixture("close_results.txt")
       end
     end
@@ -64,5 +73,10 @@ describe Redpomo::CLI do
   end
 
   pending "add"
+
+  after(:each) do
+    File.unlink(todo_path)
+    File.unlink(config_path)
+  end
 
 end

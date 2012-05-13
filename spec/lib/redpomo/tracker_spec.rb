@@ -7,7 +7,7 @@ describe Redpomo::Tracker do
     Redpomo::Tracker.new(
       "welaika",
       url: "http://code.welaika.com",
-      token: "1dd4ac72b085df0e91c84b924c36cad48e7b5481",#"WELAIKA_TOKEN",
+      token: "WELAIKA_TOKEN",#"WELAIKA_TOKEN",
       closed_status_id: "5"
     )
   end

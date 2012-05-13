@@ -57,12 +57,12 @@ module Redpomo
       entries = Entry.load_from_csv(path)
       entries = FuzzyConverter.convert(entries) if @options[:fuzzy]
 
-      unless @options[:dry_run]
+      if @options[:dry_run]
+        EntriesPrinter.print(entries)
+      else
         entries.each(&:push!)
         Redpomo.ui.info "Pushed #{entries.count} time entries!"
       end
-
-      EntriesPrinter.print(entries)
     end
 
     desc "open TASK", "opens up the Redmine issue page of the selected task"
@@ -82,7 +82,7 @@ module Redpomo
     def close(task_number)
       task = TaskList.find(task_number)
       task.done!
-      task.close_issue!
+      task.close_issue!(@options[:message])
 
       Redpomo.ui.info "Issue updated, see it at #{task.url}"
     end
