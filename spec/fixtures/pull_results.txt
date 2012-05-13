@@ -5,13 +5,13 @@ Documentazione server su Wiki #986 +giunti-web @cantiere
 Form richiesta kit #985 +giunti-web @cantiere
 Invia libro ad un amico #976 +giunti-web @cantiere
 2012-04-04 Immagini promo per chrome #859 +zazit @cantiere
-2012-04-04 Correzioni frase e logo zazit #858 +zazit @cantiere
-2012-04-02 icone per safari #839 +zazit @cantiere
-2012-04-02 icona per chrome market #837 +zazit @cantiere
+(C) 2012-04-04 Correzioni frase e logo zazit #858 +zazit @cantiere
+(B) 2012-04-02 icone per safari #839 +zazit @cantiere
+(B) 2012-04-02 icona per chrome market #837 +zazit @cantiere
 Rel Canonical e rel author #820 +railsyard @cantiere
 DSL backend per la gestione dei model #731 +railsyard @cantiere
 paradosso zazit #728 +zazit @cantiere
-New Users iOS #3316 +dashboard-fiat @welaika
+(B) New Users iOS #3316 +dashboard-fiat @welaika
 Orlando Locator #3296 +olasagasti @welaika
 Il Paniere #3295 +olasagasti @welaika
 Scheda Prodotto #3294 +olasagasti @welaika

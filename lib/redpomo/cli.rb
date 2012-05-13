@@ -42,7 +42,10 @@ module Redpomo
       issue.description = description
       issue.create!
 
-      Redpomo.ui.info "Issue created, see it at #{issue.to_task.url}"
+      task = issue.to_task
+      task.add!
+
+      Redpomo.ui.info "Issue created, see it at #{task.url}"
     end
 
     desc "pull", "imports Redmine open issues into local todo.txt"

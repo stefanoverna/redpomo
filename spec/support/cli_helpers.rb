@@ -19,7 +19,9 @@ module Spec
 
     def cli_redpomo(cmd)
       @out = capture(:stdout) do
-        Redpomo::CLI.start("#{cmd} --config #{config_path}".split)
+        cmd = cmd.kind_of?(Array) ? cmd : cmd.split
+        cmd += "--config #{config_path}".split
+        Redpomo::CLI.start(cmd)
       end
     end
 

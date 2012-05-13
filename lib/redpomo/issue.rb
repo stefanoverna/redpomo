@@ -26,11 +26,12 @@ module Redpomo
       label << "##{issue_id}"
       label << "+#{project_id}"
       label << "@#{tracker.name}"
-      Todo::Task.new(label.join(" "))
+      Task.new(nil, label.join(" "))
     end
 
     def create!
       data = tracker.create_issue!(self)
+      @issue_id = data["issue"]["id"]
     end
 
   end

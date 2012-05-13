@@ -5,8 +5,12 @@ trackers:
     token: "CANTIERE_TOKEN"
     default_project_id: "cc"
     closed_status_id: 5
+    default_priority_id: 4
+    priority_ids: [ 16, 6, 5 ]
   welaika:
     url: "http://code.welaika.com"
     token: "WELAIKA_TOKEN"
     default_project_id: "welaika"
     closed_status_id: 5
+    default_priority_id: 4
+    priority_ids: [ 7, 6, 5 ]

@@ -56,6 +56,10 @@ module Redpomo
       @list.remove!(self)
     end
 
+    def add!
+      TaskList.add!(self)
+    end
+
     def open_in_browser!
       require 'launchy'
       Launchy.open(url)

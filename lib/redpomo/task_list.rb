@@ -14,6 +14,11 @@ module Redpomo
       list.pull_from_trackers!
     end
 
+    def self.add!(task)
+      list = TaskList.new(Config.todo_path)
+      list.add!(task)
+    end
+
     def initialize(path)
       @path = path
       File.read(path).split("\n").each do |line|
@@ -27,6 +32,11 @@ module Redpomo
 
     def remove!(task)
       delete(task)
+      write!
+    end
+
+    def add!(task)
+      push task
       write!
     end
 

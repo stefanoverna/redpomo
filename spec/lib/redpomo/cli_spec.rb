@@ -59,6 +59,7 @@ describe Redpomo::CLI do
       VCR.use_cassette('cli_close') do
         cli_redpomo "close 2 -m bar"
         File.read(todo_path).should == read_fixture("close_results.txt")
+        out.strip.should == 'Issue updated, see it at http://code.welaika.com/issues/3290'
       end
     end
   end
@@ -72,7 +73,15 @@ describe Redpomo::CLI do
     end
   end
 
-  pending "add"
+  describe "add" do
+    it "creates a new task, adds it the list, and pushes it to the tracker" do
+      VCR.use_cassette('cli_add') do
+        cli_redpomo ["add", "foobar +olasagasti @welaika"]
+        File.read(todo_path).should == read_fixture("add_results.txt")
+        out.strip.should == 'Issue created, see it at http://code.welaika.com/issues/3397'
+      end
+    end
+  end
 
   after(:each) do
     File.unlink(todo_path)
