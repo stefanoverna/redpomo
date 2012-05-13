@@ -57,7 +57,7 @@ module Spec
         @err = @err_p.read_available_bytes.strip
       end
 
-      puts @err unless expect_err || @err.empty? || !$show_err
+      puts @err if !expect_err && @err.present?
       @out
     end
 
