@@ -85,7 +85,7 @@ module Redpomo
     end
 
     def tracker
-      Tracker.find(context)
+      Tracker.find(context) if context.present?
     end
 
     def to_issue
