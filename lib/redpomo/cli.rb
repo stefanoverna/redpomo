@@ -53,18 +53,40 @@ module Redpomo
       TaskList.pull_from_trackers!
     end
 
-    desc "push LOGFILE", "parses Pomodoro export file and imports to Redmine clients"
+    desc "push [LOGFILE]", "parses Pomodoro export file and imports to Redmine clients"
     method_option :fuzzy,  aliases: "-f", type: :boolean
     method_option :dry_run, aliases: "-n", type: :boolean
-    def push(path)
-      entries = Entry.load_from_csv(path)
+    def push(path = nil)
+
+      csv = if path.present?
+              File.read(File.expand_path(path))
+            else
+              require 'applescript'
+              AppleScript.execute('tell application "Pomodoro" to take log')
+            end
+
+      if csv.blank?
+        if path.present?
+          Redpomo.ui.error "Empty CSV provided!"
+        else
+          Redpomo.ui.error "Empty Pomodoro log!"
+          Redpomo.ui.info "Maybe you need to this Pomodoro fork? https://github.com/stefanoverna/pomodoro"
+        end
+        exit 1
+      end
+
+      entries = Entry.load_from_csv(csv)
       entries = FuzzyConverter.convert(entries) if @options[:fuzzy]
 
       if @options[:dry_run]
         EntriesPrinter.print(entries)
       else
         entries.each(&:push!)
-        Redpomo.ui.info "Pushed #{entries.count} time entries!"
+        Redpomo.ui.info "Pushed #{entries.count} time entries"
+        if path.blank?
+          AppleScript.execute('tell application "Pomodoro" to clear')
+          Redpomo.ui.info "Cleared Pomodoro.app log"
+        end
       end
     end
 

@@ -3,10 +3,18 @@ require 'csv'
 module Redpomo
   class Entry
 
-    def self.load_from_csv(path)
-      CSV.parse(File.read(path).split("\n")[4..-1].join("\n")).map do |data|
+    def self.load_from_csv(text)
+      csv_rows(text).map do |data|
         Entry.new(data[0], DateTime.parse(data[1]), data[2].to_i * 60.0)
-      end.sort_by { |entry| entry.datetime }
+      end.compact.sort_by { |entry| entry.datetime }
+    end
+
+    def self.csv_rows(text)
+      if text.match /^Export data created/
+        CSV.parse text.split("\n")[4..-1].join("\n")
+      else
+        CSV.parse text
+      end
     end
 
     attr_reader :text, :datetime, :duration

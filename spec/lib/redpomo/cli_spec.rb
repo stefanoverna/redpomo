@@ -26,7 +26,7 @@ describe Redpomo::CLI do
     it "pushes the specified timelog to remote trackers" do
       VCR.use_cassette('cli_push') do
         cli_redpomo "push #{fixture("timelog.csv")}"
-        out.strip.should == "Pushed 2 time entries!"
+        out.strip.should == "Pushed 2 time entries"
       end
     end
   end
