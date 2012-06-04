@@ -30,6 +30,7 @@ module Redpomo
       @default_project_id = options[:default_project_id]
       @default_priority_id = options[:default_priority_id]
       @closed_status_id = options[:closed_status_id].to_i
+      @default_activity_id = options[:default_activity_id]
       @priorities = options[:priority_ids]
     end
 
@@ -83,6 +84,10 @@ module Redpomo
       time_entry[:spent_on] = entry.datetime
       time_entry[:hours] = entry.duration / 3600.0
       time_entry[:comments] = task.text
+
+      if @default_activity_id.present?
+        time_entry[:activity_id] = @default_activity_id.to_i
+      end
 
       post("/time_entries", time_entry: time_entry)
     end

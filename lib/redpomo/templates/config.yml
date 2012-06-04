@@ -11,19 +11,25 @@ trackers:
     token: ""                        # Find this at the following URL:
                                      # http://mytracker.com/my/account
 
+    default_activity_id: 9           # Choose a timetrack activity ID from one
+                                     # of those specified at:
+                                     # http://mytracker.com/enumerations
+                                     #
+                                     # -- 9 is "Development" on clean Redmine
+
     default_project_id: "project"    # If timetracks you're pushing don't have
                                      # a +project specified, use this.
 
     default_priority_id: 4           # If issues you're adding don't have a
                                      # priority specified, then use this.
                                      #
-                                     # -- 4 should be "Normal" on most Redmines
+                                     # -- 4 is "Normal" on clean Redmine
 
     closed_status_id: 5              # Identifier of the status used to mark
                                      # issues as closed. Find this ID here:
                                      # http://mytracker.com/issue_statuses
                                      #
-                                     # -- 5 should be "Closed" on most Redmines
+                                     # -- 5 is "Closed" on clean Redmine
 
     priority_ids:                    # Map a Todo.txt priority with a Redmine
                                      # priority ID.
@@ -36,5 +42,6 @@ trackers:
                                      # Find those IDs at the following URL:
                                      # http://mytracker.com/enumerations
                                      #
-                                     # -- 7, 6 and 5 should be "Immediate",
-                                     # "Urgent" and "High" on most Redmines
+                                     # -- 7, 6 and 5 are "Immediate", "Urgent"
+                                     #    and "High" on clean Redmine
+
