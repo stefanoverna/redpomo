@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'redpomo/entry'
 
 describe Redpomo::Entry do
 
