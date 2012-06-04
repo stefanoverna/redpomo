@@ -5,7 +5,7 @@ module Redpomo
 
     def self.load_from_csv(text)
       csv_rows(text).map do |data|
-        Entry.new(data[0], DateTime.parse(data[1]), data[2].to_i * 60.0)
+        Entry.new(data[0], DateTime.parse(data[1]), data[2].to_i * 60.0) if data.size >= 3
       end.compact.sort_by { |entry| entry.datetime }
     end
 
