@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler'
+require 'active_support/core_ext/object'
 
 if ENV['SIMPLECOV']
   require 'simplecov'

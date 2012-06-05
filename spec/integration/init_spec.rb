@@ -27,7 +27,7 @@ describe "redpomo init" do
 
   it "complains if no EDITOR is set" do
     redpomo "init #{config_path}", :env => {"EDITOR" => "", "VISUAL" => "", "REDPOMO_EDITOR" => ""}
-    out.should == "To open the .redpomo config file, set $EDITOR or $REDPOMO_EDITOR"
+    out.should include "set $EDITOR or $REDPOMO_EDITOR"
   end
 
 end

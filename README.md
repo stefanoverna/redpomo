@@ -15,14 +15,14 @@ Redpomo is the classic "scratch your own itch" project:
 
     › redpomo help
     Tasks:
-      redpomo add           # creates a new task on Todo.txt, forwarding it to the remote tracker
-      redpomo close TASK    # marks a todo.txt task as complete, and closes the related Redmine issue
-      redpomo help [TASK]   # Describe available tasks or one specific task
-      redpomo init          # generates a .redpomo configuration file on your home directory
-      redpomo open TASK     # opens up the Redmine issue page of the selected task
-      redpomo pull          # imports Redmine open issues into local todo.txt
-      redpomo push LOGFILE  # parses Pomodoro export file and imports to Redmine clients
-      redpomo start TASK    # starts a Pomodoro session for the selected task
+      redpomo init            # generates a .redpomo configuration file on your home directory
+      redpomo pull            # imports Redmine open issues into local todo.txt
+      redpomo push [LOGFILE]  # parses Pomodoro export file and imports to Redmine clients
+      redpomo add [TASK]      # creates a new task on Todo.txt, forwarding it to the remote tracker
+      redpomo close TASK      # marks a todo.txt task as complete, and closes the related Redmine issue
+      redpomo open TASK       # opens up the Redmine issue page of the selected task
+      redpomo start TASK      # starts a Pomodoro session for the selected task
+      redpomo help [TASK]     # Describe available tasks or one specific task
 
     Options:
       -c, [--config=CONFIG] # Default: ~/.redpomo

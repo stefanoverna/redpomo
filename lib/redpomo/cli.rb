@@ -6,7 +6,6 @@ require 'redpomo/task_list'
 require 'redpomo/entry'
 require 'redpomo/entries_printer'
 require 'redpomo/fuzzy_converter'
-# require 'redpomo/issue_generator'
 
 module Redpomo
   class CLI < ::Thor
@@ -27,25 +26,30 @@ module Redpomo
     map "c" => :close
     map "a" => :add
 
-    desc "add", "creates a new task on Todo.txt, forwarding it to the remote tracker"
+    desc "add [TASK]", "creates a new task on Todo.txt, forwarding it to the remote tracker"
     method_option :description, aliases: "-d"
     def add(subject = nil)
       description = @options[:description]
 
       if subject.blank?
-        message_path = tmp_path('issue') + ".textile"
+        message_path = Tempfile.new('issue').path + ".textile"
         template "issue_stub.textile", message_path, verbose: false
-        subject, description = parse_message edit(message_path)
+        subject, description = parse_message open_editor(message_path)
       end
 
       issue = Task.new(nil, subject).to_issue
       issue.description = description
-      issue.create!
 
-      task = issue.to_task
-      task.add!
+      if issue.tracker.present?
+        issue.create!
+        task = issue.to_task
+        task.add!
 
-      Redpomo.ui.info "Issue created, see it at #{task.url}"
+        Redpomo.ui.info "Issue created, see it at #{task.url}"
+      else
+        Redpomo.ui.error "Cannot create issue, unknown tracker."
+        exit 1
+      end
     end
 
     desc "pull", "imports Redmine open issues into local todo.txt"
@@ -116,15 +120,7 @@ module Redpomo
     def init(path = '~/.redpomo')
       path =  File.expand_path(path)
       template "config.yml", path, verbose: false
-
-      editor = [ENV['REDPOMO_EDITOR'], ENV['VISUAL'], ENV['EDITOR']].find{|e| !e.nil? && !e.empty? }
-      if editor
-        command = "#{editor} #{path}"
-        system(command)
-        File.read(path)
-      else
-        Redpomo.ui.info("To open the .redpomo config file, set $EDITOR or $REDPOMO_EDITOR")
-      end
+      open_editor(path)
     end
 
     private
@@ -150,6 +146,18 @@ module Redpomo
       description ||= ''
 
       [subject.strip, description.strip]
+    end
+
+    def open_editor(path)
+      editor = [ENV['REDPOMO_EDITOR'], ENV['VISUAL'], ENV['EDITOR']].find{|e| !e.nil? && !e.empty? }
+      if editor
+        command = "#{editor} #{path}"
+        system(command)
+        File.read(path)
+      else
+        Redpomo.ui.error("To open #{path}, set $EDITOR or $REDPOMO_EDITOR")
+        exit 1
+      end
     end
 
   end

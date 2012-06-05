@@ -93,7 +93,7 @@ module Redpomo
       issue.subject = text
       issue.project_id = project
       issue.due_date = date
-      issue.priority_id = tracker.issue_priority_id(priority)
+      issue.priority_id = tracker.issue_priority_id(priority) if tracker.present?
       issue
     end
 
