@@ -28,8 +28,6 @@ module Redpomo
 
     def existing_keys
       if File.exists?(cache_path)
-        puts File.read(cache_path)
-        puts
         YAML::load_file(cache_path) || {}
       else
         {}

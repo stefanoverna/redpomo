@@ -3,12 +3,7 @@ require 'spec_helper'
 
 describe "redpomo init" do
 
-  let(:config_path) {
-    new_config = Tempfile.new('redpomo')
-    new_config_path = new_config.path
-    new_config.unlink
-    new_config_path
-  }
+  let(:config_path) { tmp_path('redpomo') }
 
   it "generates a .redpomo config file" do
     redpomo "init #{config_path}", env: { "EDITOR" => "echo editor" }

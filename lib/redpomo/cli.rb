@@ -33,7 +33,7 @@ module Redpomo
       description = @options[:description]
 
       if subject.blank?
-        message_path = Tempfile.new('issue').path + ".textile"
+        message_path = tmp_path('issue') + ".textile"
         template "issue_stub.textile", message_path, verbose: false
         subject, description = parse_message edit(message_path)
       end
