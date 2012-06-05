@@ -27,7 +27,13 @@ module Redpomo
     end
 
     def existing_keys
-      File.exists?(cache_path) ? (YAML::load_file(cache_path) || {}) : {}
+      if File.exists?(cache_path)
+        puts File.read(cache_path)
+        puts
+        YAML::load_file(cache_path) || {}
+      else
+        {}
+      end
     end
 
     def set(key, val)
