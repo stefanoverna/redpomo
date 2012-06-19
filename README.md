@@ -18,12 +18,13 @@ Redpomo is an opinionated CLI tool that makes it darmn easy to:
 * Create, close and navigate Redmine issues assigned to you;
 * Push your completed pomodoros to remote Redmine as project time-tracks;
 
-## It integrates nicely with Todo.txt
+## It integrates nicely with [Todo.txt](http://todotxt.com/)!
 
 Instead of reinventing yet another time the weel, Redpomo talks with
 your remote Redmine instances, and syncs all the issues assigned to
-your user into Todo.txt tasks. Just launch `redpomo` from your command
-line, and you're done:
+your local machine converting them into Todo.txt tasks.
+
+Just launch `redpomo` from your command line, and you're done:
 
 ```
 $ redpomo
@@ -55,7 +56,7 @@ The generic syntax for the imported task will be the following (thanks to
 +-> Issue priority (A means Immediate)
 ```
 
-### Create new Redmine self-assigned issues
+### How to create new Redmine self-assigned issues
 
 That's so simple:
 
@@ -72,21 +73,21 @@ Issue created, see it at http://code.welaika.com/issues/3659
 * On iTerm 2 terminals, just command + click on the URL to open up the
   browser!
 
-### Closing a Redmine issue
+### How to close a Redmine issue
 
 ```
 $ redpomo close 3 -m "Finally done"
 Issue updated, see it at http://code.welaika.com/issues/1490
 ```
 
-### Open the browser to a specific Redmine issue
+### Opening the browser to a specific Redmine issue
 
 ```
 $ redpomo open 3
   # -> takes your browser to http://code.welaika.com/issues/1490
 ```
 
-## It integrates nicely with [Pomodoro.app](https://github.com/ugol/pomodoro)
+## It integrates nicely with [Pomodoro.app](https://github.com/ugol/pomodoro)!
 
 If you need to start working on some Redmine issue, just use the `start`
 command:
