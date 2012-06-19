@@ -22,7 +22,7 @@ Redpomo is an opinionated CLI tool that makes it darmn easy to:
 
 Instead of reinventing yet another time the weel, Redpomo talks with
 your remote Redmine instances, and syncs all the issues assigned to
-your local machine converting them into Todo.txt tasks.
+your user with your local machine, converting them into Todo.txt tasks.
 
 Just launch `redpomo` from your command line, and you're done:
 
