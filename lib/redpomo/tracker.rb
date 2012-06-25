@@ -69,7 +69,36 @@ module Redpomo
       post("/issues", issue: data)
     end
 
+    def pushable_entry?(entry)
+      data = entry_data(entry)
+      if data[:project_id]
+        project_exists?(data[:project_id])
+      else
+        issue_exists?(data[:issue_id])
+      end
+    end
+
     def push_entry!(entry)
+      post("/time_entries", time_entry: entry_data(entry))
+    end
+
+    def close_issue!(id, message = nil)
+      issue = { status_id: @closed_status_id }
+      issue[:notes] = message if message.present?
+      put("/issues/#{id}", issue: issue)
+    end
+
+    private
+
+    def project_exists?(project_id)
+      project_identifier_for(project_id).present?
+    end
+
+    def issue_exists?(issue_id)
+      issue_identifier_for(issue_id).present?
+    end
+
+    def entry_data(entry)
       task = entry.to_task
       time_entry = {}
 
@@ -89,22 +118,25 @@ module Redpomo
         time_entry[:activity_id] = @default_activity_id.to_i
       end
 
-      post("/time_entries", time_entry: time_entry)
+      time_entry
     end
 
-    def close_issue!(id, message = nil)
-      issue = { status_id: @closed_status_id }
-      issue[:notes] = message if message.present?
-      put("/issues/#{id}", issue: issue)
+    def issue_identifier_for(issue_id)
+      Config.cache.get("#{@name}:issue:#{issue_id}:identifier") do
+        data = get("/issues/#{issue_id}")
+        data["issue"]["id"]
+      end
+    rescue RestClient::ResourceNotFound => e
+      nil
     end
-
-    private
 
     def project_identifier_for(project_id)
-      Config.cache.get("#{@name}:#{project_id}:identifier") do
+      Config.cache.get("#{@name}:project:#{project_id}:identifier") do
         data = get("/projects/#{project_id}")
         data["project"]["identifier"]
       end
+    rescue RestClient::ResourceNotFound => e
+      nil
     end
 
     def current_user_id

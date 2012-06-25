@@ -50,7 +50,11 @@ module Redpomo
     end
 
     def push!
-      to_task.tracker.push_entry!(self)
+      to_task.tracker.push_entry!(self) if pushable?
+    end
+
+    def pushable?
+      to_task.tracker.pushable_entry?(self)
     end
 
   end

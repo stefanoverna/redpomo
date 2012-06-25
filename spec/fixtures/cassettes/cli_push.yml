@@ -1,11 +1,151 @@
 ---
 http_interactions:
 - request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/giunti-web.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 25 Jun 2012 18:49:26 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"65d33299faf455805a802660e349d516"'
+      X-Runtime:
+      - '17'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '241'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"LCD (Gianni Sinni)","id":55},"updated_on":"2012/03/14
+        21:52:12 +0100","description":"","created_on":"2012/03/14 21:52:12 +0100","identifier":"giunti-web","name":"Sito
+        Giunti Educational ","id":56,"homepage":""}}'
+    http_version:
+  recorded_at: Mon, 25 Jun 2012 18:49:27 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/issues/3293.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 25 Jun 2012 18:49:27 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"e96d810afab9370460405d2b1279b664"'
+      X-Runtime:
+      - '40'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '447'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"issue":{"status":{"name":"Closed","id":5},"updated_on":"2012/05/07
+        17:02:13 +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":100,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:23 +0200","spent_hours":4.2152778208256,"subject":"Ricette","author":{"name":"Stefano
+        Verna","id":4},"id":3293,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}}}'
+    http_version:
+  recorded_at: Mon, 25 Jun 2012 18:49:27 GMT
+- request:
+    method: get
+    uri: https://project.cantierecreativo.net/projects/giunti-web.json?key=CANTIERE_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 25 Jun 2012 18:49:27 GMT
+      Server:
+      - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
+        Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"65d33299faf455805a802660e349d516"'
+      X-Runtime:
+      - '21'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '241'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"project":{"parent":{"name":"LCD (Gianni Sinni)","id":55},"updated_on":"2012/03/14
+        21:52:12 +0100","description":"","created_on":"2012/03/14 21:52:12 +0100","identifier":"giunti-web","name":"Sito
+        Giunti Educational ","id":56,"homepage":""}}'
+    http_version:
+  recorded_at: Mon, 25 Jun 2012 18:49:27 GMT
+- request:
     method: post
     uri: https://project.cantierecreativo.net/time_entries.json?key=CANTIERE_TOKEN
     body:
-      encoding: UTF-8
-      string: ! '{"time_entry":{"project_id":"giunti-web","spent_on":"2012-05-02T08:10:08+00:00","hours":0.4166666666666667,"comments":"Layout
+      encoding: US-ASCII
+      string: ! '{"time_entry":{"project_id":"giunti-web","spent_on":"2012-05-02T08:10:08+00:00","hours":0.08333333333333333,"comments":"Layout
         homepage e contatti"}}'
     headers:
       Accept:
@@ -15,7 +155,7 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '148'
+      - '149'
       User-Agent:
       - Ruby
   response:
@@ -24,42 +164,90 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Sat, 05 May 2012 14:11:52 GMT
+      - Mon, 25 Jun 2012 18:49:27 GMT
       Server:
       - Apache/2.2.9 (Debian) DAV/2 PHP/5.2.6-1+lenny10 with Suhosin-Patch mod_python/3.3.1
         Python/2.5.2 mod_ssl/2.2.9 OpenSSL/0.9.8g Phusion_Passenger/3.0.0
       X-Powered-By:
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       X-Runtime:
-      - '75'
+      - '65'
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _redmine_session=BAh7BjoPc2Vzc2lvbl9pZCIlNmUxNzY3NGJmMmZiZThhYmNkNjY4ZTM0MzIyMDY0ZjQ%3D--7b100ed7107ac6dc44145c2c17b57f1575f0520c;
+      - _redmine_session=BAh7BjoPc2Vzc2lvbl9pZCIlZTlhMGZjM2RhNGJlNWZlNzgzYzA0MWRiYjdkODQ0Y2Y%3D--c177e9142b00003b7a458d3f998b8c69a011cd9a;
         path=/; HttpOnly
       - autologin=; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT
       Location:
-      - https://project.cantierecreativo.net/time_entries/378
+      - https://project.cantierecreativo.net/time_entries/1067
       Content-Length:
-      - '333'
+      - '335'
       Status:
       - '201'
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: US-ASCII
-      string: ! '{"time_entry":{"hours":0.416666666666667,"activity":{"name":"da valutare","id":15},"updated_on":"2012/05/05
-        16:11:52 +0200","comments":"Layout homepage e contatti","spent_on":"2012/05/02","user":{"name":"Stefano
-        Verna","id":18},"created_on":"2012/05/05 16:11:52 +0200","project":{"name":"Sito
-        Giunti Educational ","id":56},"id":378}}'
+      string: ! '{"time_entry":{"hours":0.0833333333333333,"activity":{"name":"da
+        valutare","id":15},"updated_on":"2012/06/25 20:49:27 +0200","comments":"Layout
+        homepage e contatti","spent_on":"2012/05/02","user":{"name":"Stefano Verna","id":18},"created_on":"2012/06/25
+        20:49:27 +0200","project":{"name":"Sito Giunti Educational ","id":56},"id":1067}}'
     http_version:
-  recorded_at: Sat, 05 May 2012 14:11:52 GMT
+  recorded_at: Mon, 25 Jun 2012 18:49:27 GMT
+- request:
+    method: get
+    uri: http://code.welaika.com/issues/3293.json?key=WELAIKA_TOKEN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 25 Jun 2012 18:49:27 GMT
+      Server:
+      - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
+        OpenSSL/0.9.8g Phusion_Passenger/3.0.0
+      X-Powered-By:
+      - Phusion Passenger (mod_rails/mod_rack) 3.0.0
+      Etag:
+      - ! '"e96d810afab9370460405d2b1279b664"'
+      X-Runtime:
+      - '36'
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Content-Length:
+      - '447'
+      Status:
+      - '200'
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: US-ASCII
+      string: ! '{"issue":{"status":{"name":"Closed","id":5},"updated_on":"2012/05/07
+        17:02:13 +0200","assigned_to":{"name":"Stefano Verna","id":4},"done_ratio":100,"description":"","tracker":{"name":"Feature","id":2},"start_date":"2012/04/27","created_on":"2012/04/27
+        18:15:23 +0200","spent_hours":4.2152778208256,"subject":"Ricette","author":{"name":"Stefano
+        Verna","id":4},"id":3293,"priority":{"name":"Normal","id":4},"project":{"name":"Olasagasti
+        ","id":52}}}'
+    http_version:
+  recorded_at: Mon, 25 Jun 2012 18:49:28 GMT
 - request:
     method: post
     uri: http://code.welaika.com/time_entries.json?key=WELAIKA_TOKEN
     body:
-      encoding: UTF-8
-      string: ! '{"time_entry":{"issue_id":3293,"spent_on":"2012-05-04T15:04:57+00:00","hours":0.4166666666666667,"comments":"Ricette"}}'
+      encoding: US-ASCII
+      string: ! '{"time_entry":{"issue_id":3293,"spent_on":"2012-05-04T15:04:57+00:00","hours":0.08333333333333333,"comments":"Ricette"}}'
     headers:
       Accept:
       - application/json
@@ -68,7 +256,7 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '119'
+      - '120'
       User-Agent:
       - Ruby
   response:
@@ -77,33 +265,33 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Sat, 05 May 2012 14:11:52 GMT
+      - Mon, 25 Jun 2012 18:49:28 GMT
       Server:
       - Apache/2.2.9 (Debian) PHP/5.2.6-1+lenny9 with Suhosin-Patch mod_ssl/2.2.9
         OpenSSL/0.9.8g Phusion_Passenger/3.0.0
       X-Powered-By:
       - Phusion Passenger (mod_rails/mod_rack) 3.0.0
       X-Runtime:
-      - '56'
+      - '184'
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _redmine_session=BAh7BjoPc2Vzc2lvbl9pZCIlMGVlNTVkNWZiN2UyZTI4ZDNjZTljMjkyYmJmNWI5YzE%3D--4d8e5b85461c3b062a6f8b46da9601b9b8719173;
+      - _redmine_session=BAh7BjoPc2Vzc2lvbl9pZCIlYzYwYzNlOWFjZmM3NjIyOThlZmEzMGE4MjE4N2IyZjE%3D--07438999f23ae8a8c673302f979759a67f640430;
         path=/; HttpOnly
       Location:
-      - http://code.welaika.com/time_entries/3943
+      - http://code.welaika.com/time_entries/4501
       Content-Length:
-      - '320'
+      - '321'
       Status:
       - '201'
       Content-Type:
       - application/json; charset=utf-8
     body:
       encoding: US-ASCII
-      string: ! '{"time_entry":{"spent_on":"2012/05/04","updated_on":"2012/05/05 16:11:53
-        +0200","activity":{"name":"Development","id":9},"user":{"name":"Stefano Verna","id":4},"created_on":"2012/05/05
-        16:11:53 +0200","hours":0.416666666666667,"comments":"Ricette","issue":{"id":3293},"id":3943,"project":{"name":"Olasagasti
+      string: ! '{"time_entry":{"spent_on":"2012/05/04","updated_on":"2012/06/25 20:49:28
+        +0200","activity":{"name":"Development","id":9},"user":{"name":"Stefano Verna","id":4},"created_on":"2012/06/25
+        20:49:28 +0200","hours":0.0833333333333333,"comments":"Ricette","issue":{"id":3293},"id":4501,"project":{"name":"Olasagasti
         ","id":52}}}'
     http_version:
-  recorded_at: Sat, 05 May 2012 14:11:53 GMT
+  recorded_at: Mon, 25 Jun 2012 18:49:28 GMT
 recorded_with: VCR 2.0.1

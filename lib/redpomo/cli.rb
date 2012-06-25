@@ -82,6 +82,14 @@ module Redpomo
       entries = Entry.load_from_csv(csv)
       entries = FuzzyConverter.convert(entries) if @options[:fuzzy]
 
+      unpushable_entries = entries.select {|entry| !entry.pushable? }
+
+      if unpushable_entries.any?
+        Redpomo.ui.error "Some pomodoros cannot be associated with a proper issue/project."
+        EntriesPrinter.print(unpushable_entries)
+        exit 1
+      end
+
       if @options[:dry_run]
         EntriesPrinter.print(entries)
       else
