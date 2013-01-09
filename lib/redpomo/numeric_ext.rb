@@ -14,6 +14,7 @@ class Numeric
   end
 
   def seconds_in_words
+    return "0 secs" if self.zero?
     unit = get_unit(self)
     unit_difference = self / Units.const_get(unit.capitalize)
     unit = unit.to_s.downcase + ('s' if self > 1)
