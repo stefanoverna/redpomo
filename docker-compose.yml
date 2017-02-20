@@ -1,0 +1,7 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: bundle exec guard -i
+    volumes:
+      - .:/usr/local/src
