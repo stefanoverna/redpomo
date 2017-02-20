@@ -8,13 +8,13 @@ describe Redpomo::Entry do
     it "parses Pomodoro's classic invalid CSV format" do
       text = File.read(fixture("timelog.csv"))
       rows = Redpomo::Entry.csv_rows(text)
-      rows.should have(2).rows
+      expect(rows.size).to eq(2)
     end
 
     it "parses my Pomodoro fork proper CSV format" do
       text = File.read(fixture("proper_timelog.csv"))
       rows = Redpomo::Entry.csv_rows(text)
-      rows.should have(4).rows
+      expect(rows.size).to eq(4)
     end
 
   end

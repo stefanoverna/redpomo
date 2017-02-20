@@ -7,7 +7,7 @@ describe "redpomo init" do
 
   it "generates a .redpomo config file" do
     redpomo "init #{config_path}", env: { "EDITOR" => "echo editor" }
-    File.exists?(config_path).should be_true
+    expect(File.exists?(config_path)).to be true
   end
 
   it "opens the config with REDPOMO_EDITOR as highest priority" do

@@ -1,4 +1,4 @@
-require 'todo-txt'
+require 'todo'
 require 'redpomo/task'
 
 module Redpomo

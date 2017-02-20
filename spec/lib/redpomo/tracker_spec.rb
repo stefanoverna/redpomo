@@ -26,7 +26,7 @@ describe Redpomo::Tracker do
     it "creates an Issue for each remote issue" do
       VCR.use_cassette('issues') do
         issues = subject.issues
-        issues.should have(7).issues
+        expect(issues.size).to eq(7)
         issues.first.tracker.should == subject
         issues.first.project_id.should == 'dashboard-fiat'
         issues.first.issue_id.should == 3316

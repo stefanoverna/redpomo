@@ -1,5 +1,5 @@
 require 'active_support/core_ext/module/delegation'
-require 'todo-txt'
+require 'todo'
 require 'redpomo/tracker'
 
 module Todo

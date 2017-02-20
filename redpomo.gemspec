@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "activesupport"
   gem.add_dependency "thor"
-  gem.add_dependency "todo-txt"
+  gem.add_dependency "todo-txt", '~> 0.11'
   gem.add_dependency "rest-client"
   gem.add_dependency "launchy"
   gem.add_dependency "applescript"

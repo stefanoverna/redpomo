@@ -1,7 +1,8 @@
 options = {
   cmd: "bundle exec rspec",
   all_on_start: true,
-  failed_mode: :focus
+  failed_mode: :focus,
+  focues: true
 }
 
 guard :rspec, options do

@@ -158,7 +158,7 @@ module Redpomo
     def request(type, url, params = {})
       args = []
       args << @base_url + url + ".json"
-      args << params.delete(:body).to_json unless type == :get
+      args << JSON.generate(params.delete(:body)) unless type == :get
       args << {
         accept: :json,
         content_type: :json,
@@ -168,7 +168,7 @@ module Redpomo
     end
 
     def parse(json)
-      json && json.length >= 2 ? JSON.parse(json) : nil
+      json && json.length >= 2 ? ::JSON.parse(json) : nil
     end
 
   end

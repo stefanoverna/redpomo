@@ -54,7 +54,7 @@ describe Redpomo::FuzzyConverter do
           ]
         end
         it "it keeps them separated" do
-          converted_entries.should have(2).entries
+          expect(converted_entries.size).to eq(2)
           converted_entries.first.duration.should == 25.minutes
           converted_entries.last.duration.should == 25.minutes
         end
