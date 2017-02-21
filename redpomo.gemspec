@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{A nice little gem that integrates Redmine, Todo.txt and Pomodoro.app}
   gem.homepage      = ""
 
-  gem.files         = Dir.glob("./**/*")
+  gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "redpomo-reloaded"
