@@ -2,8 +2,8 @@
 require File.expand_path('../lib/redpomo/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Stefano Verna"]
-  gem.email         = ["stefano.verna@welaika.com"]
+  gem.authors       = ["Stefano Verna", "Yuri Freire"]
+  gem.email         = ["yurifrl@outlook.com"]
   gem.description   = %q{A nice little gem that integrates Redmine, Todo.txt and Pomodoro.app}
   gem.summary       = %q{A nice little gem that integrates Redmine, Todo.txt and Pomodoro.app}
   gem.homepage      = ""
@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.files         = Dir.glob("./**/*")
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "redpomo"
+  gem.name          = "redpomo-reloaded"
   gem.require_paths = ["lib"]
   gem.version       = Redpomo::VERSION
 
